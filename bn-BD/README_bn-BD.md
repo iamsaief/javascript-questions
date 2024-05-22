@@ -1397,7 +1397,7 @@ Promise.race([firstPromise, secondPromise]).then((res) => console.log(res));
 
 #### উত্তর: B
 
-When we pass multiple promises to the `Promise.race` method, it resolves/rejects the _first_ promise that resolves/rejects. To the `setTimeout` method, we pass a timer: 500ms for the first promise (`firstPromise`), and 100ms for the second promise (`secondPromise`). This means that the `secondPromise` resolves first with the value of `'two'`. `res` now holds the value of `'two'`, which gets logged.
+যখন `Promise.race` মেথডে আমরা একাধিক প্রোমিস পাস করি, _১ম_ যে প্রমিসটি রিসলভ/রিজেক্ট হয় তাকেই এটা রিসলভ/রিজেক্ট করে। `setTimeout` মেথডে আমরা একটি টাইমার পাস করেছিঃ ১ম প্রমিসে (`firstPromise`) 500ms এবং ২য় প্রমিসে (`secondPromise`) 100ms। এর মানে হল, `secondPromise`টি `'two'` ভ্যালু নিয়ে প্রথমে রিজলভ হয়। তাই `res` এর ভ্যালুটিই (`'two'`) লগ হচ্ছে।
 
 </p>
 </details>
@@ -1424,19 +1424,19 @@ console.log(members);
 
 #### উত্তর: D
 
-First, we declare a variable `person` with the value of an object that has a `name` property.
+১মে, আমরা একটি ভ্যারিয়েবল `person` ডিক্লেয়ার করেছি, এটি একটি অবজেক্ট যার একটি `name` প্রোপার্টি (কি) আছে।
 
 <img src="https://i.imgur.com/TML1MbS.png" width="200">
 
-Then, we declare a variable called `members`. We set the first element of that array equal to the value of the `person` variable. Objects interact by _reference_ when setting them equal to each other. When you assign a reference from one variable to another, you make a _copy_ of that reference. (note that they don't have the _same_ reference!)
+তারপর আমরা আরও একটি ভ্যারিয়েবল ডিক্লেয়ার করেছি `members` নামে। এটি একটি অ্যারে যার ১ম ইনডেক্সটির ভ্যালু সমান হচ্ছে `person` ভ্যারিয়েলবটি। যখন অবজেক্টকে একে ওপরের সমান সেট করা হয় এরা _রেফারেন্স_ এর মাধ্যমে কাজ করে। যখন আপনি একটি ভ্যারিয়েবলকে অ্যাসাইন করছেন অন্য ভ্যরিয়েবলের রেফারেন্স, আপনি আসলে ঐ রেফারেন্সের একটি _কপি_ করছেন। _মনে রাখবেন তাদের কাছে কিন্তু একই রেফারেন্স নেই_ !
 
 <img src="https://i.imgur.com/FSG5K3F.png" width="300">
 
-Then, we set the variable `person` equal to `null`.
+পরবর্তিতে `person` ভ্যায়েবলকে আমরা সেট করছি সমান সমান `null`।
 
 <img src="https://i.imgur.com/sYjcsMT.png" width="300">
 
-We are only modifying the value of the `person` variable, and not the first element in the array, since that element has a different (copied) reference to the object. The first element in `members` still holds its reference to the original object. When we log the `members` array, the first element still holds the value of the object, which gets logged.
+আমরা কেবল `person` ভ্যায়েবলকে পরিবর্তন করেছি, অ্যারের ১ম এলিমেন্টকে নয়, যেহেতু ঐ এলিমেন্টির কাছে অবজেক্টের ভিন্ন (কপিকৃত) একটি রেফারেন্স আছে। `members` অ্যারের ১ম এলিমেন্টটি এখনো আসল অবজেক্টির রেফারেন্সটি ধরে রেখেছে তাই ১ম এলিমেন্টটি তার ভ্যালুও ধরে রেখেছে আসল অবজেক্টির ভ্যালুকেই। ফলে যখন `members` অ্যারেকে লগ করা হয় সেটাই লগ হয়েছে।
 
 </p>
 </details>
@@ -1466,7 +1466,7 @@ for (const item in person) {
 
 #### উত্তর: B
 
-With a `for-in` loop, we can iterate through object keys, in this case `name` and `age`. Under the hood, object keys are strings (if they're not a Symbol). On every loop, we set the value of `item` equal to the current key it’s iterating over. First, `item` is equal to `name`, and gets logged. Then, `item` is equal to `age`, which gets logged.
+`for-in` লুপ ব্যবহার করে আমরা কেবল অবজেক্টের কি-গুলির মধ্যেই পুনরাবৃত্তি করতে পারি, এক্ষেত্রে `name` ও `age`। ভেতরে ভেতরে অবজেক্ট কীগুলি হল স্ট্রিং (যদি তারা কোন একটি প্রতীক (Symbol) না হয়)। প্রতিটি লুপে, আমরা `item` মানটি বর্তমান কী-টির সমান সেট করি যার পুনরাবৃত্তি হচ্ছে। ১মে, `item`-টি `name`-এর সমান, এবং লগ করা হয়। তারপর, `item`-টি `age`-এর সমান, যা লগ হয়।
 
 </p>
 </details>
@@ -1489,18 +1489,18 @@ console.log(3 + 4 + '5');
 
 #### উত্তর: B
 
-Operator associativity is the order in which the compiler evaluates the expressions, either left-to-right or right-to-left. This only happens if all operators have the _same_ precedence. We only have one type of operator: `+`. For addition, the associativity is left-to-right.
+**অপারেটর অ্যাসোসিয়েটিভিটি** হল সেই ক্রম যেখানে কম্পাইলার বাম-থেকে-ডান বা ডান-থেকে-বামে এক্সপ্রেশনকে মূল্যায়ন করে। এটি শুধুমাত্র তখনই ঘটে যখন সমস্ত অপারেটরের _একই_ অগ্রাধিকার থাকে। আমাদের শুধুমাত্র এক ধরনের অপারেটর আছে: `+`। উপরন্তু, অ্যাসোসিয়েটিভিটি বাম থেকে ডান।
 
-`3 + 4` gets evaluated first. This results in the number `7`.
+১মে `3 + 4` মূল্যায়ন করা হয়। এর ফলে সংখ্যাটি `7` হয়।
 
-`7 + '5'` results in `"75"` because of coercion. JavaScript converts the number `7` into a string, see question 15. We can concatenate two strings using the `+`operator. `"7" + "5"` results in `"75"`.
+**কোয়ার্শন** এর ফলে `7 + '5'` এর ফলাফল হয় `"75"`। জাভাস্ক্রিপ্ট `7` নম্বরটিকে একটি স্ট্রিংয়ে রূপান্তর করে, [প্রশ্ন 15 দেখুন](#15-এটার-আউটপুট-কোনটা)। আমরা `+` অপারেটর ব্যবহার করে দুটি স্ট্রিংকে সংযুক্ত করতে পারি। `"7" + "5"` ফলাফলে `"75"`।
 
 </p>
 </details>
 
 ---
 
-###### 49. What's the value of `num`?
+###### 49. `num` এর ভ্যালু কোনটি?
 
 ```javascript
 const num = parseInt('7*6', 10);
@@ -1516,9 +1516,9 @@ const num = parseInt('7*6', 10);
 
 #### উত্তর: C
 
-Only the first number in the string is returned. Based on the _radix_ (the second argument in order to specify what type of number we want to parse it to: base 10, hexadecimal, octal, binary, etc.), the `parseInt` checks whether the characters in the string are valid. Once it encounters a character that isn't a valid number in the radix, it stops parsing and ignores the following characters.
+স্ট্রিং এর শুধুমাত্র প্রথম সংখ্যাটি রিটার্ন করা হয়েছে। _radix_ এর উপর ভিত্তি করে স্ট্রিং-এর অক্ষরগুলি বৈধ কিনা তা পরীক্ষা করে (২য় আর্গুমেন্টই নির্দিষ্ট করে আমরা কোন ধরনের সংখ্যাকে পার্স করতে চাই: ডেসিমাল - 10, হেক্সাডেসিমাল - 16, অক্টাল - 8, বাইনারি - 2, ইত্যাদি)। এটি যখন একবার এমন একটি অক্ষরের মুখোমুখি হয় যা রেডিক্সে একটি বৈধ সংখ্যা নয়, তখন পার্সিং বন্ধ করে দেয় এবং পরবর্তি অক্ষরগুলিকে উপেক্ষা করে।
 
-`*` is not a valid number. It only parses `"7"` into the decimal `7`. `num` now holds the value of `7`.
+`*` একটি বৈধ সংখ্যা নয়। এটি শুধুমাত্র `"7"` কে ডেসিমাল `7`-এ পার্স করে। `num` মান তাই `7`।
 
 </p>
 </details>
@@ -1544,9 +1544,9 @@ Only the first number in the string is returned. Based on the _radix_ (the secon
 
 #### উত্তর: C
 
-When mapping over the array, the value of `num` is equal to the element it’s currently looping over. In this case, the elements are numbers, so the condition of the if statement `typeof num === "number"` returns `true`. The map function creates a new array and inserts the values returned from the function.
+অ্যারের উপর ম্যাপিং করার সময়, `num` এর মানটি বর্তমানে লুপ করা হচ্ছে সেই এলিমেন্টের সমান। এই ক্ষেত্রে, এলিমেন্টগুলো সংখ্যা, তাই if স্টেটমেন্টের শর্তটি`typeof num === "number"` - `true` রিটার্ন করে। ম্যাপ ফাংশন একটি নতুন অ্যারে তৈরি করে এবং ফাংশন থেকে রিটার্ন করা ভ্যালুগুলো সেটাতে যুক্ত করে।
 
-However, we don’t return a value. When we don’t return a value from the function, the function returns `undefined`. For every element in the array, the function block gets called, so for each element we return `undefined`.
+অন্যদিকে, আমরা কোন ভ্যালুই রিটার্ন করি নি। যখন ফাংশন থেকে কোন একটি ভ্যালু রিটার্ন করা হয় না, ফাংশন `undefined` রিটার্ন করে। অ্যারের প্রতিটি এলিমেন্টের জন্য, ফাংশন ব্লক কল করা হয়, তাই প্রতিটি এলিমেন্টের জন্য আমরা `undefined` রিটার্ন করছি।
 
 </p>
 </details>
