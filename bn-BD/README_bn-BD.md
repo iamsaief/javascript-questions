@@ -1579,11 +1579,11 @@ console.log(person, birthYear);
 
 #### উত্তর: A
 
-Arguments are passed by _value_, unless their value is an object, then they're passed by _reference_. `birthYear` is passed by value, since it's a string, not an object. When we pass arguments by value, a _copy_ of that value is created (see question 46).
+আর্গুমেন্টসগুলো হল পাসড বাই _ভ্যালু_, যদি না তারা অবজেক্ট হয়, তবে তারা পাসড বাই _রেফারেন্স_। যেহেতু `birthYear` একটি স্ট্রিং এটি পাসড বাই ভ্যালু। যখন আমরা আর্গুমেন্টসগুলো পাস করি _ভ্যালু_ হিসেবে, ঐ ভ্যালুর একটি _কপি_ তৈরি হয়। [(প্রশ্ন ৪৬ দেখুন)](#46-এটার-আউটপুট-কোনটা)
 
-The variable `birthYear` has a reference to the value `"1997"`. The argument `year` also has a reference to the value `"1997"`, but it's not the same value as `birthYear` has a reference to. When we update the value of `year` by setting `year` equal to `"1998"`, we are only updating the value of `year`. `birthYear` is still equal to `"1997"`.
+`birthYear` ভ্যারিয়েবলটির কাছে `"1997"` ভ্যালুর একটি রেফারেন্স আছে। `year` আর্গুমেন্টের কাছেও `"1997"` ভ্যালুর একটি রেফারেন্স আছে, কিন্তু দুটি রেফারেন্স একি নয়। মানে হল, ফাংশনের ভেতরে আমরা যখন `year` এর ভ্যালুকে আপডেট করছি `"1998"` এর সমান করে, আমরা কেবল `year` এর ভ্যালিটিই পরিবর্তন করছি। `birthYear` এর ভ্যালু এখনো সমান হচ্ছে `"1997"`।
 
-The value of `person` is an object. The argument `member` has a (copied) reference to the _same_ object. When we modify a property of the object `member` has a reference to, the value of `person` will also be modified, since they both have a reference to the same object. `person`'s `name` property is now equal to the value `"Lydia"`
+অন্যদিকে, `person` হল একটি অবজেক্ট। এই অবজেক্টের রেফারেন্স পাস হয়েছে `member` আর্গুমেন্টিটির কাছে। যখন আমরা অবজেক্টের কোন প্রপার্টিকে পরিবর্তন করছি যেটার রেফারেন্স আছে `member` এর কাছে, তাই `person` অবজেক্টও পরিবর্তন হচ্ছে যাচ্ছে। যেহেতু তাদের রেফারেন্স একই। ফলে `person`-এর `name` প্রোপার্টিটি এখন সমান হল `"Lydia"`।
 
 </p>
 </details>
@@ -1619,9 +1619,9 @@ sayHi();
 
 #### উত্তর: D
 
-With the `throw` statement, we can create custom errors. With this statement, you can throw exceptions. An exception can be a <b>string</b>, a <b>number</b>, a <b>boolean</b> or an <b>object</b>. In this case, our exception is the string `'Hello world!'`.
+`throw` স্টেটমেন্ট ব্যবহার করে আমরা কাস্টম এররস তৈরি করে এক্সসেপশন থ্রো করতে পারি। এক্সসেপশনস হতে পারে **string**, **number**, **boolean**, অথবা একটি **অবজেক্ট** । এক্ষেত্রে, এক্সসেপশন হল একটি স্ট্রিং `'Hello world!'`।
 
-With the `catch` statement, we can specify what to do if an exception is thrown in the `try` block. An exception is thrown: the string `'Hello world!'`. `e` is now equal to that string, which we log. This results in `'Oh an error: Hello world!'`.
+`catch` স্টেটমেন্ট ব্যবহার করে আমরা এটা নির্দিস্ট করতে পারি যে _কি করা হবে_ যখন `try` ব্লক থেকে কোন এক্সসেপশন থ্রো করা হয়। এক্সসেপশন থ্রো করা হয়েছেঃ `'Hello world!'` স্ট্রিংটি। `e` হল এই স্ট্রিংটির সমান, যেটা লগ করা হয়েছে। তাই ফলাফল হয়েছে `'Oh an error: Hello world!'`।
 
 </p>
 </details>
@@ -1650,9 +1650,9 @@ console.log(myCar.make);
 
 #### উত্তর: B
 
-When a constructor function is called with the `new` keyword, it creates an object and sets the `this` keyword to refer to that object. By default, if the constructor function doesn't explicitly return anything, it will return the newly created object.
+যখন একটি কনস্ট্রাক্টর ফাংশনকে `new` কীওয়ার্ড দিয়ে কল করা হয়, তখন এটি একটি অবজেক্ট তৈরি করে এবং এটাকে রেফার করার জন্য `this` কীওয়ার্ডটি সেট করে। ডিফল্টরূপে, যদি কনস্ট্রাক্টর ফাংশন সরাসরি কিছু রিটার্ন না করে, তবে এটি নতুন তৈরিকৃত অবজেক্টকেই রিটার্ন করবে।
 
-In this case, the constructor function `Car` explicitly returns a new object with `make` set to `"Maserati"`, which overrides the default behavior. Therefore, when `new Car()` is called, the _returned_ object is assigned to `myCar`, resulting in the output being `"Maserati"` when `myCar.make` is accessed.
+এই ক্ষেত্রে, কনস্ট্রাক্টর ফাংশন `Car` সরাসরি একটি নতুন অবজেক্ট রিটার্ন করে যার সাথে `make` প্রোপার্টিকে সেট করা হয় `"Maserati"`, যা ডিফল্ট আচরনকে ওভাররাইড করে। তাই, যখন `new Car()` কল করা হয়, তখন _returned_ অবজেক্টটি `myCar`-এ অ্যাসাইন করা হয়, যার ফলে `myCar.make`কে অ্যাক্সেস করা হলে আউটপুট `"Maserati"` হয়।
 
 </p>
 </details>
@@ -1680,18 +1680,18 @@ console.log(typeof y);
 
 #### উত্তর: A
 
-`let x = (y = 10);` is actually shorthand for:
+`let x = (y = 10);` আসলে হচ্ছে নিচের উল্লেখিত অংশের সংক্ষিপ্তরূপ ঃ
 
 ```javascript
 y = 10;
 let x = y;
 ```
 
-When we set `y` equal to `10`, we actually add a property `y` to the global object (`window` in the browser, `global` in Node). In a browser, `window.y` is now equal to `10`.
+আমরা যখন `y` কে সেট করি `10` এর সমান তখন আমরা আসলে গ্লোবাল অবজেক্টে একটি প্রপার্টি `y` যোগ করি (ব্রাউজারে `উইন্ডো`, নোডে `গ্লোবাল`)। একটি ব্রাউজারে, `window.y` এখন `10` এর সমান।
 
-Then, we declare a variable `x` with the value of `y`, which is `10`. Variables declared with the `let` keyword are _block scoped_, they are only defined within the block they're declared in; the immediately invoked function expression (IIFE) in this case. When we use the `typeof` operator, the operand `x` is not defined: we are trying to access `x` outside of the block it's declared in. This means that `x` is not defined. Values who haven't been assigned a value or declared are of type `"undefined"`. `console.log(typeof x)` returns `"undefined"`.
+তারপর, আমরা `y` এর ভ্যালু সহ একটি ভেরিয়েবল `x` ডিক্লেয়ার করি, যা `10`। `let` কীওয়ার্ডের সাথে ডিক্লেয়ার করা ভেরিয়েবলগুলি হল _block scoped_, তারা শুধুমাত্র যে ব্লকে ডিক্লেয়ার করা হয়েছে তার মধ্যেই ডিফাইনকৃত (সংজ্ঞায়িত) থাকবে; এই ক্ষেত্রে ইমিডিয়েটলি ইনভোকড ফাংশন এক্সপ্রেশন (IIFE)। যখন আমরা `typeof` অপারেটর ব্যবহার করছি, সেখানে অপারেন্ড `x` ডিফাইন হয়নি: আমরা যে ব্লকে এটি ঘোষণা করা হয়েছে তার বাইরে `x`-কে অ্যাক্সেস করার চেষ্টা করছি। এখানে `x` ডিফাইন হয়নি। যে মানগুলিকে একটি মান অ্যাসাইন করা হয়নি বা ডিক্লেয়ার করা হয়নি সেগুলি `"undefined"` হয় টাইপের। তাই `console.log(typeof x)` `"undefined"` রিটার্ন করেছে।
 
-However, we created a global variable `y` when setting `y` equal to `10`. This value is accessible anywhere in our code. `y` is defined, and holds a value of type `"number"`. `console.log(typeof y)` returns `"number"`.
+অন্যদিকে, আমরা `y` কে `10` এর সমান সেট করে একটি গ্লোবাল ভ্যেরিয়েবল তৈরি করেছি `y`। এই ভ্যালুটি কোডের যেকোন অংশ থেকেই অ্যাক্সেস করা যাবে। `y` যেহেতু একটি `"number"` টাইপ দিয়ে ডিফাইন হয়েছে, `console.log(typeof y)` রিটার্ন করেছে `"number"`।
 
 </p>
 </details>
@@ -1730,9 +1730,9 @@ pet.bark();
 
 #### উত্তর: A
 
-We can delete properties from objects using the `delete` keyword, also on the prototype. By deleting a property on the prototype, it is not available anymore in the prototype chain. In this case, the `bark` function is not available anymore on the prototype after `delete Dog.prototype.bark`, yet we still try to access it.
+`delete` কিওয়ার্ড ব্যবহার করে অবজেক্টের প্রোপার্টিস মুছে ফেলতে পারি, একইভাবে প্রোটোটাইপ থেকেও মুছে ফেলতে পারি। একটি প্রোপার্টিকে প্রোটোটাইপ থেকে মুছে ফেললে তাকে প্রোটোটাইপ চেইনে আর পাওয়া যায় না। এক্ষেত্রে, `delete Dog.prototype.bark`-এর পরে `bark` ফাংশনটি প্রোটোটাইপ চেইনে আর নেই, তবুও আমরা এটি অ্যাক্সেস করার চেষ্টা করেছি।
 
-When we try to invoke something that is not a function, a `TypeError` is thrown. In this case `TypeError: pet.bark is not a function`, since `pet.bark` is `undefined`.
+যখন আমরা ফাংশন নয় এমন কোনো কিছুকে কল করার চেষ্টা করি, তখন একটি `TypeError` থ্রো করা হয়। এই ক্ষেত্রে `TypeError: pet.bark is not a function`, যেহেতু `pet.bark` `undefined`।
 
 </p>
 </details>
@@ -1757,9 +1757,9 @@ console.log(set);
 
 #### উত্তর: D
 
-The `Set` object is a collection of _unique_ values: a value can only occur once in a set.
+`Set` অবজেক্টটি হল _অনন্য_ ভ্যালুসমুহের একটি সংগ্রহ: একটি সেটে একই মান কেবল একবারই থাকতে পারে।
 
-We passed the iterable `[1, 1, 2, 3, 4]` with a duplicate value `1`. Since we cannot have two of the same values in a set, one of them is removed. This results in `{1, 2, 3, 4}`.
+আমরা একটি অ্যারে `[1, 1, 2, 3, 4]` পাস করেছি যেখানে একটি ডুপ্লিকেট মান `1` আছে। যেহেতু আমাদের একটি সেটে একই মান দুটি থাকতে পারে না, তাদের মধ্যে একটি সরানো হয়। তাই ফলাফল হয়ছে `{1, 2, 3, 4}`।
 
 </p>
 </details>
@@ -1793,9 +1793,9 @@ console.log(myCounter);
 
 #### উত্তর: C
 
-An imported module is _read-only_: you cannot modify the imported module. Only the module that exports them can change its value.
+একটি ইম্পোর্ট করা মডিউল হল _শুধুমাত্র পড়া যায়_: আপনি ইম্পোর্ট করা মডিউল পরিবর্তন করতে পারবেন না। শুধুমাত্র যে মডিউল তাদের এক্সপোর্ট করে সেই কেবল মানের পরিবর্তন করতে পারে।
 
-When we try to increment the value of `myCounter`, it throws an error: `myCounter` is read-only and cannot be modified.
+যখন আমরা `myCounter` এর মান বৃদ্ধি করার চেষ্টা করি, এটি একটি এরর ছুড়ে দেয়া হয়: `myCounter` is read-only and cannot be modified.
 
 </p>
 </details>
@@ -1822,9 +1822,9 @@ console.log(delete age);
 
 #### উত্তর: A
 
-The `delete` operator returns a boolean value: `true` on a successful deletion, else it'll return `false`. However, variables declared with the `var`, `const`, or `let` keywords cannot be deleted using the `delete` operator.
+`delete` অপারেটর একটি বুলিয়ান মান রিটার্ন করে: ডিলিট সফল হলে `true`, অন্যথায় এটি `false` প্রদান করবে। অন্যদিকে, `var`, `const`, বা `let` কীওয়ার্ডের দিয়ে ডিক্লেয়ার করা ভেরিয়েবল `delete` অপারেটর ব্যবহার করে মুছে ফেলা যায় না।
 
-The `name` variable was declared with a `const` keyword, so its deletion is not successful: `false` is returned. When we set `age` equal to `21`, we actually added a property called `age` to the global object. You can successfully delete properties from objects this way, also the global object, so `delete age` returns `true`.
+`name` ভেরিয়েবলটিকে একটি `const` কীওয়ার্ড দিয়ে ডিক্লেয়ার করা হয়েছিল, তাই এটি মুছে ফেলা সফল হয়নি: `false` রিটার্ন করা হয়েছে। যখন আমরা `age` সমান `21` সেট করি, আমরা আসলে গ্লোবাল অবজেক্টে `age` নামক একটি প্রপার্টি যোগ করি। আপনি সফলভাবে অবজেক্টগুলো থেকে এইভাবে প্রপার্টিগুলি মুছে ফেলতে পারেন, গ্লোবাল অবজেক্ট থেকেও তাই `delete age` `true` রিটার্ন করে।
 
 </p>
 </details>
@@ -1850,7 +1850,7 @@ console.log(y);
 
 #### উত্তর: C
 
-We can unpack values from arrays or properties from objects through destructuring. For example:
+আমরা ডিস্ট্রাকচারের মাধ্যমে অ্যারের ভ্যালু বা অবজেক্ট প্রোপার্টিস বের করে আনতে পারি। উদাহরণ স্বরূপ:
 
 ```javascript
 [a, b] = [1, 2];
@@ -1858,7 +1858,7 @@ We can unpack values from arrays or properties from objects through destructurin
 
 <img src="https://i.imgur.com/ADFpVop.png" width="200">
 
-The value of `a` is now `1`, and the value of `b` is now `2`. What we actually did in the question, is:
+`a`-এর ভ্যালুটি এখন `1` এবং `b` -এর ভ্যালু এখন `2`। আমরা আসলে এই প্রশ্নের বেলায় যেটা করেছিঃ
 
 ```javascript
 [y] = [1, 2, 3, 4, 5];
@@ -1866,7 +1866,7 @@ The value of `a` is now `1`, and the value of `b` is now `2`. What we actually d
 
 <img src="https://i.imgur.com/NzGkMNk.png" width="200">
 
-This means that the value of `y` is equal to the first value in the array, which is the number `1`. When we log `y`, `1` is returned.
+এর মানে হল, `y` এর ভ্যালু সমান হয় অ্যারের ১ম এলিমেন্টের ভ্যালু, এই ভ্যালুটিি হল `1` সংখ্যাটি। তাই `y` কে যখন লগ করছি রিটার্ন পাই `1`।
 
 </p>
 </details>
@@ -1892,7 +1892,7 @@ console.log(admin);
 
 #### উত্তর: B
 
-It's possible to combine objects using the spread operator `...`. It lets you create copies of the key/value pairs of one object, and add them to another object. In this case, we create copies of the `user` object, and add them to the `admin` object. The `admin` object now contains the copied key/value pairs, which results in `{ admin: true, name: "Lydia", age: 21 }`.
+স্প্রেড অপারেটর `...` দিয়ে অবজেক্টগুলোকে একত্রিত করা সম্ভব। এর মাধ্যমে একটি অবজেক্টের কি/ভ্যালু জোড়াদ্বয়ের কপি তৈরি করতে পারবেন এবং অন্য অবজেক্টে তাদের যুক্ত করতে পারবেন। এক্ষেত্রে, আমরা `user` অবজেক্টের কপি তৈরি করেছি এবং `admin` অবজেক্টে যুক্ত করেছি। তাই `admin` অবজেক্টে এখন কি/ভ্যালু জোড়ার কপিও রয়েছে, ফলে লগ করায় `{ admin: true, name: "Lydia", age: 21 }` রিটার্ন পাই।
 
 </p>
 </details>
@@ -1920,9 +1920,9 @@ console.log(Object.keys(person));
 
 #### উত্তর: B
 
-With the `defineProperty` method, we can add new properties to an object, or modify existing ones. When we add a property to an object using the `defineProperty` method, they are by default _not enumerable_. The `Object.keys` method returns all _enumerable_ property names from an object, in this case only `"name"`.
+`defineProperty` মেথডের সাহায্যে, আমরা একটি অবজেক্টে নতুন প্রোপার্টিস যোগ করতে পারি বা বিদ্যমানগুলিকে সংশোধন করতে পারি। যখন আমরা `defineProperty` মেথডের ব্যবহার করে কোনো অবজেক্টে একটি প্রোপার্টি যোগ করি, তখন সেগুলি ডিফল্টরূপে _গণনাযোগ্য নয়_ (_not enumerable_)। `Object.keys` মেথড একটি অবজেক্টের সমস্ত _গণনাযোগ্য_ প্রোপার্টিসের নাম রিটার্ন করে, এই ক্ষেত্রে শুধুমাত্র `"name"`।
 
-Properties added using the `defineProperty` method are immutable by default. You can override this behavior using the `writable`, `configurable` and `enumerable` properties. This way, the `defineProperty` method gives you a lot more control over the properties you're adding to an object.
+`defineProperty` মেথড ব্যবহার করে যোগ করা প্রোপার্টিসগুলি ডিফল্টরূপে অপরিবর্তনীয়। এ আচরণটিকে আপনি ওভাররাইড করতে পারেন `writable`, `configurable` ও `enumerable` প্রোপার্টিসগুলি ব্যবহার করে। এইভাবে, `defineProperty` মেথড আপনাকে একটি অবজেক্টে যে প্রোপার্টিসগুলি যোগ করছেন তার উপর অনেক বেশি নিয়ন্ত্রণ দেয়।
 
 </p>
 </details>
@@ -1952,11 +1952,11 @@ console.log(data);
 
 #### উত্তর: A
 
-The second argument of `JSON.stringify` is the _replacer_. The replacer can either be a function or an array, and lets you control what and how the values should be stringified.
+`JSON.stringify` এর দ্বিতীয় আর্গুমেন্ট হল _replacer_। রিপ্লেসার একটি ফাংশন বা একটি অ্যারে হতে পারে এবং এটি আপনাকে নিয়ন্ত্রণ করতে দেয় ভ্যালুগুলো কি ও কীভাবে তারা স্ট্রিংফাই হবে সেটা।
 
-If the replacer is an _array_, only the property names included in the array will be added to the JSON string. In this case, only the properties with the names `"level"` and `"health"` are included, `"username"` is excluded. `data` is now equal to `"{"level":19, "health":90}"`.
+যদি রিপ্লেসার একটি _array_ হয়, শুধুমাত্র অ্যারেতে অন্তর্ভুক্ত প্রোপার্টিসের নামগুলি JSON স্ট্রিংয়ে যোগ করা হবে। এই ক্ষেত্রে, শুধুমাত্র `"level"` এবং `"health"` নামের প্রোপার্টিসগুলি অন্তর্ভুক্ত করা হয়েছে, `"username"` বাদ দেওয়া হয়েছে। তাই `data` এখন `"{"level":19, "health":90}"` এর সমান।
 
-If the replacer is a _function_, this function gets called on every property in the object you're stringifying. The value returned from this function will be the value of the property when it's added to the JSON string. If the value is `undefined`, this property is excluded from the JSON string.
+যদি রিপ্লেসারটি একটি _function_ হয়, তাহলে আপনি যে অবজেক্টকে স্ট্রিংফাই করছেন তার প্রতিটি প্রোপার্টিসের জন্য এই ফাংশনটি কল করা হবে। এই ফাংশন থেকে রিটার্ন করা ভ্যালুই হবে সেই প্রোপার্টিসের ভ্যালু যখন এটি JSON স্ট্রিং-এ যোগ করা হয়। ভ্যালুটি যদি `undefined` হয়, তাহলে এই প্রপার্টিটি JSON স্ট্রিং থেকে বাদ দেওয়া হবে।
 
 </p>
 </details>
@@ -1988,9 +1988,9 @@ console.log(num2);
 
 #### উত্তর: A
 
-The unary operator `++` _first returns_ the value of the operand, _then increments_ the value of the operand. The value of `num1` is `10`, since the `increaseNumber` function first returns the value of `num`, which is `10`, and only increments the value of `num` afterward.
+ইউনারি অপারেটর `++` _প্রথমে অপারেন্ডের মান রিটার্ন করে_, তারপর অপারেন্ডের মান বৃদ্ধি করে। `num1`-এর ভ্যালু `10`, যেহেতু `increaseNumber` ফাংশনটি প্রথমে ভ্যালুটিকে রিটার্ন করে, যেটা হল `10`, তারপরই কেবল ভ্যালুটিকে বৃদ্ধি করে।
 
-`num2` is `10`, since we passed `num1` to the `increasePassedNumber`. `number` is equal to `10`(the value of `num1`). Again, the unary operator `++` _first returns_ the value of the operand, _then increments_ the value of the operand. The value of `number` is `10`, so `num2` is equal to `10`.
+`num2` হল `10`, যেহেতু আমরা `num1` কে `increasePassedNumber`-এ পাস করেছি। `number` সমান হল `10` (`num1` এর মান)। আবার, ইউনারী অপারেটর `++` _প্রথমে অপারেন্ডের মান রিটার্ন করে_, তারপর অপারেন্ডের মান বৃদ্ধি করে। তাই `number` এর ভ্যালু হল `10`, ফলে `num2` সমানও হয় `10`।
 
 </p>
 </details>
@@ -2022,13 +2022,13 @@ multiply(value);
 
 #### উত্তর: C
 
-In ES6, we can initialize parameters with a default value. The value of the parameter will be the default value, if no other value has been passed to the function, or if the value of the parameter is `"undefined"`. In this case, we spread the properties of the `value` object into a new object, so `x` has the default value of `{ number: 10 }`.
+ইএস৬ এ, আমরা ফাংশনের প্যারামিটারকে একটি ডিফল্ট ভ্যালু দিয়ে ইনিশিয়ালাইজ করতে পারি। প্যারামিটারের ভ্যালুটিই ডিফল্ট হিসেবে থেকে যায় যদি না ফাংশনে অন্য কোন ভ্যালু পাস করা হয়, অথবা প্যারামিটারের ভ্যালুটি `"undefined"` হয়। এক্ষেত্রে, আমরা `value` অবজেক্টের প্রোপার্টিসগুলোকে নতুন অবজেক্টে স্প্রেড করেছি, তাই `x`-এর কাছে ডিফল্ট ভ্যালু থাকছে `{ number: 10 }`।
 
-The default argument is evaluated at _call time_! Every time we call the function, a _new_ object is created. We invoke the `multiply` function the first two times without passing a value: `x` has the default value of `{ number: 10 }`. We then log the multiplied value of that number, which is `20`.
+ডিফল্ট আর্গুমেন্টটির মান নির্নয় হয়ছে ফাংশন _কলের সময়_ ! আমরা প্রতিবার ফাংশন করছি, একটি _নতুন_ অবজেক্ট তৈরি হচ্ছে। প্রথম দুবার আমরা কোন ভ্যালু পাস না করেই `multiply` ফাংশকে চালিয়েছিঃ তাই `x`-এর কাছে ডিফল্ট ভ্যালুটি থাকছে `{ number: 10 }`। তারপর আমরা গুণফল লগ করেছি, যেটি হয় `20`।
 
-The third time we invoke multiply, we do pass an argument: the object called `value`. The `*=` operator is actually shorthand for `x.number = x.number * 2`: we modify the value of `x.number`, and log the multiplied value `20`.
+৩য় বার, `multiply` ফাংশকে চালিয়েছি, আর্গুমেন্ট এ `value` অবজেক্টকে পাস করে। `*=` অপারেটরটি আসলে `x.number = x.number * 2` এর সংক্ষিপ্তরূপঃ আমরা `x.number`-এর ভ্যালুকে পরিবর্তন করেছি এবং গুণফল `20`-কে লগ করেছি।
 
-The fourth time, we pass the `value` object again. `x.number` was previously modified to `20`, so `x.number *= 2` logs `40`.
+৪র্থ বারে, আমরা আবার `value` অবজেক্টকে পাস করেছি। যেহেতু আগেরবার `x.number`-এর ভ্যালুকে পরিবর্তন করে `20` পেয়েছিলাম, অবজেক্ট যেহেতু রেফারেন্স টাইপ তাই এখন `x.number *= 2` লগ করে `40` পাচ্ছি।
 
 </p>
 </details>
@@ -2051,17 +2051,17 @@ The fourth time, we pass the `value` object again. `x.number` was previously mod
 
 #### উত্তর: D
 
-The first argument that the `reduce` method receives is the _accumulator_, `x` in this case. The second argument is the _current value_, `y`. With the reduce method, we execute a callback function on every element in the array, which could ultimately result in one single value.
+`reduce` মেথড ১ম যে আর্গুমেন্টটি নেয় তাকে বলা হয় _accumulator_, এক্ষেত্রে সেটা `x`। ২য় আর্গুমেন্টটিকে বলা হয় _current value_, `y`। `reduce` মেথডের মাধ্যমে, আমরা অ্যারের প্রতীটি এলিমেন্টের জন্য একটি কলব্যাক ফাংশন চালাই, যা শেষ পর্যন্ত একটি একক মানের ফলাফল প্রদান করে।
 
-In this example, we are not returning any values, we are simply logging the values of the accumulator and the current value.
+এই উদাহরনের বেলায়, আমরা কোন ভ্যালুকেই রিটার্ন করছি না, কেবল দুটি ভ্যালুকে _accumulator_ ও _current value_ লগ করছি
 
-The value of the accumulator is equal to the previously returned value of the callback function. If you don't pass the optional `initialValue` argument to the `reduce` method, the accumulator is equal to the first element on the first call.
+_accumulator_ এর ভ্যালুটি কলব্যাক ফাংশনের আগেরবারের রিটার্ন করা ভ্যালুর সমান হয়। `reduce` মেথডের আর্গুমেন্টে আপনি যদি অপশনাল ভ্যালু `initialValue` পাস না করেন, তবে ১ম কলের সময় _accumulator_ এর ভ্যালু সমান হয় অ্যারের ১ম এলিমেন্টটি।
 
-On the first call, the accumulator (`x`) is `1`, and the current value (`y`) is `2`. We don't return from the callback function, we log the accumulator, and the current values: `1` and `2` get logged.
+১ম কলে, _accumulator_ (`x`) হয় `1` এবং _current value_ (`y`) হয় `2`। আমরা কলব্যাক ফাংশন থেকে কোন ভ্যালুকেই রিটার্ন করছি না, কেবল _accumulator_ ও _current value_ ভ্যালু লগ করছিঃ `1` ও `2` লগ হয়েছে।
 
-If you don't return a value from a function, it returns `undefined`. On the next call, the accumulator is `undefined`, and the current value is `3`. `undefined` and `3` get logged.
+আপনি যদি ফাংশন থেকে কিছু রিটার্ন না করেন তবে, এটা `undefined` রিটার্ন করে। তাই পরবর্তি কলে, _accumulator_ হয় `undefined` _current value_ হয় `3`। `undefined` ও `3` লগ হয়েছে।
 
-On the fourth call, we again don't return from the callback function. The accumulator is again `undefined`, and the current value is `4`. `undefined` and `4` get logged.
+৪র্থ কলে, আমরা আবারও কলব্যাক ফাংশন থেকে রিটার্ন করছি না। তাই _accumulator_ আবারও হয় `undefined`, এবং _current value_ হয় `4`। `undefined` ও `4` লগ হয়েছে।
 
 </p>
 </details>
