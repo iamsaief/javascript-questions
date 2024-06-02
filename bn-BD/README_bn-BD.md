@@ -2068,7 +2068,7 @@ _accumulator_ এর ভ্যালুটি কলব্যাক ফাংশ
   
 ---
 
-###### 66. With which constructor can we successfully extend the `Dog` class?
+###### 66. কোন কন্সট্রাক্টরটি দিয়ে আমরা সফলভাবে `Dog` ক্লাসকে এক্সটেন্ড করতে পারি?
 
 ```javascript
 class Dog {
@@ -2111,11 +2111,11 @@ class Labrador extends Dog {
 
 #### উত্তর: B
 
-In a derived class, you cannot access the `this` keyword before calling `super`. If you try to do that, it will throw a ReferenceError: 1 and 4 would throw a reference error.
+একটি ডিরাইভড ক্লাসে, আপনি `super` কল করার আগে `this` কীওয়ার্ড অ্যাক্সেস করতে পারবেন না। আপনি যদি এটি করার চেষ্টা করেন তবে এটি একটি রেফারেন্স এরর (ReferenceError) থ্রো করবে: 1 এবং 4 একটি রেফারেন্স এরর থ্রো করবে।
 
-With the `super` keyword, we call that parent class's constructor with the given arguments. The parent's constructor receives the `name` argument, so we need to pass `name` to `super`.
+`super` কীওয়ার্ড দিয়ে, আমরা প্রদত্ত আর্গুমেন্ট সহ সেই প্যারেন্ট ক্লাসের কনস্ট্রাক্টরকে কল করি। প্যারেন্টের কন্সট্রাক্টর `name` আর্গুমেন্ট নেয়, তাই `super`-এ আমাদের `name` পাস করতে হবে।
 
-The `Labrador` class receives two arguments, `name` since it extends `Dog`, and `size` as an extra property on the `Labrador` class. They both need to be passed to the constructor function on `Labrador`, which is done correctly using constructor 2.
+`Labrador` ক্লাস দুটি আর্গুমেন্ট নেয়, `name` যেহেতু এটি `Dog` ক্লাসকে এক্সটেন্ড করে এবং `size` কে `Labrador` ক্লাসে একটি অতিরিক্ত প্রোপার্টি হিসাবে এক্সটেন্ড করে। তাদের উভয়কেই `Labrador`-এর কনস্ট্রাক্টর ফাংশনে পাস করতে হবে, যা কনস্ট্রাক্টর 2 ব্যবহার করে সঠিকভাবে করা হয়েছে।
 
 </p>
 </details>
@@ -2145,9 +2145,9 @@ export const sum = (a, b) => a + b;
 
 #### উত্তর: B
 
-With the `import` keyword, all imported modules are _pre-parsed_. This means that the imported modules get run _first_, and the code in the file that imports the module gets executed _after_.
+`import` কীওয়ার্ড ব্যবহৃত হলে, `import` করা সমস্ত মডিউল _প্রি-পার্স_ করা হয়। এর মানে হল যে ইম্পোর্ট করা মডিউলগুলি _প্রথমে_ চালানো হয়, এবং যে ফাইলে মডিউলটি ইম্পোর্ট করা হয় তার কোড _পরবর্তীতে_ চলবে।
 
-This is a difference between `require()` in CommonJS and `import`! With `require()`, you can load dependencies on demand while the code is being run. If we had used `require` instead of `import`, `running index.js`, `running sum.js`, `3` would have been logged to the console.
+এটি CommonJS-এ `require()` এবং `import` এর মধ্যে একটি পার্থক্য! `require()` দিয়ে, কোড চালানোর সময় আপনি প্রয়োজন অনুযায়ী ডিপেন্ডেন্সিগুলো লোড করতে পারেন। আমরা যদি `import` এর পরিবর্তে `require` ব্যবহার করতাম, কনসোলে লগ হতোঃ `running index.js`, `running sum.js`, `3`।
 
 </p>
 </details>
@@ -2172,7 +2172,7 @@ console.log(Symbol('foo') === Symbol('foo'));
 
 #### উত্তর: A
 
-Every Symbol is entirely unique. The purpose of the argument passed to the Symbol is to give the Symbol a description. The value of the Symbol is not dependent on the passed argument. As we test equality, we are creating two entirely new symbols: the first `Symbol('foo')`, and the second `Symbol('foo')`. These two values are unique and not equal to each other, `Symbol('foo') === Symbol('foo')` returns `false`.
+প্রতিটি Symbol সম্পূর্ণ অনন্য। Symbol-এ পাস করা আর্গুমেন্টটির উদ্দেশ্য হল Symbol-টিকে একটি বর্ণনা দেওয়া। Symbol-এর মান পাস করা আর্গুমেন্টের উপর নির্ভর করে না। আমরা সমতা পরীক্ষা করার সময়, আমরা দুটি সম্পূর্ণ নতুন Symbol তৈরি করছি: প্রথম `Symbol('foo')`, এবং দ্বিতীয় `Symbol('foo')`। এই দুটি মান অনন্য এবং একে অপরের সমান নয়, তাই `Symbol('foo') === Symbol('foo')` `false` রিটার্ন করে।
 
 </p>
 </details>
@@ -2197,9 +2197,9 @@ console.log(name.padStart(2));
 
 #### উত্তর: C
 
-With the `padStart` method, we can add padding to the beginning of a string. The value passed to this method is the _total_ length of the string together with the padding. The string `"Lydia Hallie"` has a length of `12`. `name.padStart(13)` inserts 1 space at the start of the string, because 12 + 1 is 13.
+`padStart` পদ্ধতির সাহায্যে, আমরা একটি স্ট্রিংয়ের শুরুতে প্যাডিং (শূন্যস্থান) যোগ করতে পারি। এই পদ্ধতিতে পাস করা মান হল প্যাডিংয়ের সাথে স্ট্রিংয়ের _মোট_ দৈর্ঘ্য। স্ট্রিং `"Lydia Hallie"` এর দৈর্ঘ্য `12`। `name.padStart(13)` স্ট্রিং এর শুরুতে 1টি শূন্যস্থান যুক্ত করার কারনে _মোট_ দৈর্ঘ্য 12 + 1 অর্থাৎ 13 হয়।
 
-If the argument passed to the `padStart` method is smaller than the length of the array, no padding will be added.
+যদি `padStart` পদ্ধতিতে পাস করা আর্গুমেন্ট স্ট্রিং-এর দৈর্ঘ্যের চেয়ে ছোট হয়, তাহলে কোনো প্যাডিং যোগ করা হবে না।
 
 </p>
 </details>
@@ -2222,19 +2222,19 @@ console.log('🥑' + '💻');
 
 #### উত্তর: A
 
-With the `+` operator, you can concatenate strings. In this case, we are concatenating the string `"🥑"` with the string `"💻"`, resulting in `"🥑💻"`.
+`+` অপারেটর দিয়ে, আপনি স্ট্রিং যুক্ত করতে পারেন। এক্ষেত্রে, আমরা স্ট্রিং `"🥑"` কে স্ট্রিং `"💻"` -এর সাথে যুক্ত করছি, যার ফলাফল `"🥑💻"`।
 
 </p>
 </details>
 
 ---
 
-###### 71. How can we log the values that are commented out after the console.log statement?
+###### 71. `console.log` স্ট্যাটম্যান্ট এর পরে কমেন্ট করা ভ্যালুটিকে আমরা কিভাবে লগ করতে পারি?
 
 ```javascript
 function* startGame() {
-  const উত্তর = yield 'Do you love JavaScript?';
-  if (উত্তর !== 'Yes') {
+  const answer = yield 'Do you love JavaScript?';
+  if (answer !== 'Yes') {
     return "Oh wow... Guess we're done here";
   }
   return 'JavaScript loves you back ❤️';
@@ -2255,11 +2255,11 @@ console.log(/* 2 */); // JavaScript loves you back ❤️
 
 #### উত্তর: C
 
-A generator function "pauses" its execution when it sees the `yield` keyword. First, we have to let the function yield the string "Do you love JavaScript?", which can be done by calling `game.next().value`.
+একটি জেনারেটর ফাংশন যখন `yield` কীওয়ার্ডটি দেখে তখন তার চলমান অবস্থায় "বিরতি দেয়" ("pauses" execution)। প্রথমত, আমাদের ফাংশনটি থেকে "Do you love JavaScript?" স্ট্রিংটি পেতে হবে, যা `game.next().value` কল করে পাওয়া যাবে।
 
-Every line is executed, until it finds the first `yield` keyword. There is a `yield` keyword on the first line within the function: the execution stops with the first yield! _This means that the variable `উত্তর` is not defined yet!_
+প্রতিটি লাইন চালনা করা হয়, যতক্ষণ না এটি প্রথম `yield` কীওয়ার্ড খুঁজে পায়। ফাংশনের মধ্যে প্রথম লাইনে একটি `yield` কীওয়ার্ড আছে: প্রথম ফলাফলের (yield) সাথেই এক্সিকিউশন বন্ধ হয়ে যায়! _এর মানে হল `answer` ভেরিয়েবল এখনো ডিফাইন করা হয়নি!_
 
-When we call `game.next("Yes").value`, the previous `yield` is replaced with the value of the parameters passed to the `next()` function, `"Yes"` in this case. The value of the variable `উত্তর` is now equal to `"Yes"`. The condition of the if-statement returns `false`, and `JavaScript loves you back ❤️` gets logged.
+যখন আমরা `game.next("Yes").value` কল করি, তখন আগের `yield`টিকে `next()` ফাংশনে পাস করা প্যারামিটারের মান দিয়ে প্রতিস্থাপিত করা হয়, এই ক্ষেত্রে `"Yes"` দিয়ে। ভেরিয়েবল `answer` এর মান এখন `"Yes"` এর সমান। ইফ-স্ট্যাটম্যান্টের শর্ত `false` রিটার্ন করে এবং `JavaScript loves you back ❤️` লগ হয়ে যায়।
 
 </p>
 </details>
@@ -2282,19 +2282,19 @@ console.log(String.raw`Hello\nworld`);
 
 #### উত্তর: C
 
-`String.raw` returns a string where the escapes (`\n`, `\v`, `\t` etc.) are ignored! Backslashes can be an issue since you could end up with something like:
+`String.raw` একটি স্ট্রিং রিটার্ন করে যেখানে এস্কেপ ক্যারেক্টার (`\n`, `\v`, `\t` ইত্যাদি) উপেক্ষা করা হয়! ব্যাকস্ল্যাশগুলি একটি সমস্যা হতে পারে যখন আপনি এমন কিছু পাবেন:
 
 `` const path = `C:\Documents\Projects\table.html` ``
 
-Which would result in:
+যার ফলে আউটপুট হবে:
 
 `"C:DocumentsProjects able.html"`
 
-With `String.raw`, it would simply ignore the escape and print:
+`String.raw` ব্যবহার করলে, এটি কেবল এস্কেপ ক্যারেক্টার উপেক্ষা করবে এবং প্রিন্ট করবে:
 
 `C:\Documents\Projects\table.html`
 
-In this case, the string is `Hello\nworld`, which gets logged.
+এই ক্ষেত্রে, লগ হওয়া স্ট্রিংটি হল `Hello\nworld`।
 
 </p>
 </details>
@@ -2322,13 +2322,13 @@ console.log(data);
 
 #### উত্তর: C
 
-An async function always returns a promise. The `await` still has to wait for the promise to resolve: a pending promise gets returned when we call `getData()` in order to set `data` equal to it.
+একটি **async** ফাংশন সর্বদা একটি প্রতিশ্রুতি (promise) রিটার্ন করে। প্রমিস সমাধানের (resolve) জন্য `await`কে এখনও অপেক্ষা করতে হচ্ছে: যখন `getData()` কল করে এটির মানকে `data`-র সমান সেট করা হয় তখন আসলে একটি অমীমাংসিত (pending) প্রমিস রিটার্ন ভ্যালু হিসেবে পাওয়া যায়।
 
-If we wanted to get access to the resolved value `"I made it"`, we could have used the `.then()` method on `data`:
+যদি আমরা প্রমিস সমাধানের ভ্যালুর - `"I made it"` অ্যাক্সেস পেতে চাইতাম, তাহলে `data`-তে `.then()` মেথড ব্যবহার করতে হত:
 
 `data.then(res => console.log(res))`
 
-This would've logged `"I made it!"`
+তবেই এটি লগ করত `"I made it!"`৷
 
 </p>
 </details>
@@ -2356,9 +2356,9 @@ console.log(result);
 
 #### উত্তর: B
 
-The `.push()` method returns the _length_ of the new array! Previously, the array contained one element (the string `"banana"`) and had a length of `1`. After adding the string `"apple"` to the array, the array contains two elements, and has a length of `2`. This gets returned from the `addToList` function.
+`.push()` মেথড নতুন অ্যারের _length_ রিটার্ন করে! পূর্বে, অ্যারেতে একটি এলিমেন্ট ছিল (স্ট্রিং `"banana"`) এবং এর দৈর্ঘ্য ছিল `1`। অ্যারেতে স্ট্রিং `"apple"` যোগ করার পর, অ্যারের মোট এলিমেন্ট হয় দুটি এবং এর দৈর্ঘ্য হয় `2`। এটিই 'addToList' ফাংশন থেকে রিটার্ন আসছে।
 
-The `push` method modifies the original array. If you wanted to return the _array_ from the function rather than the _length of the array_, you should have returned `list` after pushing `item` to it.
+`push` মেথডটি মূল অ্যারেকে পরিবর্তন করে। আপনি যদি _অ্যারের দৈর্ঘ্যে_-র পরিবর্তে ফাংশন থেকে _array_-টি রিটার্ন চাইতেন, তাহলে `item`-কে পুশ করার পরে আপনার উচিত ছিল `list`-কে রিটার্ন করা।
 
 </p>
 </details>
@@ -2388,11 +2388,11 @@ console.log(shape);
 
 #### উত্তর: B
 
-`Object.freeze` makes it impossible to add, remove, or modify properties of an object (unless the property's value is another object).
+`Object.freeze` অবজেক্টে কোন প্রোপার্টি যোগ, বাদ বা সংশোধন করা অসম্ভব করে তোলে (যদি না প্রোপার্টির মান অন্য কোনো অবজেক্ট হয়)।
 
-When we create the variable `shape` and set it equal to the frozen object `box`, `shape` also refers to a frozen object. You can check whether an object is frozen by using `Object.isFrozen`. In this case, `Object.isFrozen(shape)` would return true, since the variable `shape` has a reference to a frozen object.
+যখন আমরা ভেরিয়েবল `shape` তৈরি করি এবং তাকে ফ্রোজেন অবজেক্ট `box` এর সমান সেট করি, `shape`-ও সেই ফ্রোজেন অবজেক্টকে রেফার করে। আপনি `Object.isFrozen` ব্যবহার করে কোনো অবজেক্ট ফ্রোজেন হয়েছে কিনা তা পরীক্ষা করতে পারেন। এই ক্ষেত্রে, `Object.isFrozen(shape)` true রিটার্ন করবে, কারন ভেরিয়েবল `shape`-এর কাছে একটি ফ্রোজেন অবজেক্টের রেফারেন্স আছে।
 
-Since `shape` is frozen, and since the value of `x` is not an object, we cannot modify the property `x`. `x` is still equal to `10`, and `{ x: 10, y: 20 }` gets logged.
+যেহেতু `shape` ফ্রোজেন হয়েছে, এবং `x` এর মান কোনো অবজেক্ট নয়, তাই আমরা `x` প্রোপার্টিকে পরিবর্তন করতে পারি না। `x` এখনও `10` এর সমান, এবং `{ x: 10, y: 20 }` লগ করা হয়েছে।
 
 </p>
 </details>
@@ -2417,7 +2417,7 @@ console.log(firstName);
 
 #### উত্তর: D
 
-By using [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax we can unpack values from arrays, or properties from objects, into distinct variables:
+[ডিস্ট্রাকচারিং অ্যাসাইনমেন্ট](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) সিনট্যাক্স ব্যবহার করে, আমরা অ্যারের ভ্যালু, বা অবজেক্টের প্রোপার্টি বের করে আলাদা ভ্যারিয়েবলে রাখতে পারিঃ
 
 ```javascript
 const { firstName } = { firstName: 'Lydia' };
@@ -2427,7 +2427,7 @@ const { firstName } = { firstName: 'Lydia' };
 console.log(firstName); // "Lydia"
 ```
 
-Also, a property can be unpacked from an object and assigned to a variable with a different name than the object property:
+আবার, অবজেক্ট থেকে প্রোপার্টি বের করে অবজেক্টের ঐ প্রোপার্টির নামে না রেখে অন্য নামের ভ্যারিয়েবলেও রাখতে পারিঃ
 
 ```javascript
 const { firstName: myName } = { firstName: 'Lydia' };
@@ -2438,9 +2438,9 @@ console.log(myName); // "Lydia"
 console.log(firstName); // Uncaught ReferenceError: firstName is not defined
 ```
 
-Therefore, `firstName` does not exist as a variable, thus attempting to access its value will raise a `ReferenceError`.
+অতএব, `firstName` একটি ভেরিয়েবল হিসেবে আর নেই, এইভাবে এর মান অ্যাক্সেস করার চেষ্টা করলে `ReferenceError` তৈরি হবে।
 
-**Note:** Be aware of the `global scope` properties:
+**দ্রষ্টব্য:** `গ্লোবাল স্কোপ` বৈশিষ্ট্য সম্পর্কে সচেতন থাকুন:
 
 ```javascript
 const { name: myName } = { name: 'Lydia' };
@@ -2450,18 +2450,18 @@ console.log(name); // "" ----- Browser e.g. Chrome
 console.log(name); // ReferenceError: name is not defined  ----- NodeJS
 ```
 
-Whenever Javascript is unable to find a variable within the _current scope_, it climbs up the [Scope chain](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch3.md) and searches for it and if it reaches the top-level scope, aka **Global scope**, and still doesn't find it, it will throw a `ReferenceError`.
+জাভাস্ক্রিপ্ট যখনই একটি ভেরিয়েবলকে তার _বর্তমান স্কোপে_ খুঁজে পায় না, তখন এটিকে খুঁজে পাওয়ার জন্য [স্কোপ চেইন](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch3.md)-এর উপরে ওঠে এবং যদি এটি শীর্ষ-স্তরের স্কোপে পৌঁছায়, ওরফে **গ্লোবাল স্কোপ**, এবং এখানেও খুঁজে না পায়, তাহলে এটি একটি `ReferenceError` থ্রো করবে।
 
-- In **Browsers** such as _Chrome_, `name` is a _deprecated global scope property_. In this example, the code is running inside _global scope_ and there is no user-defined local variable for `name`, therefore it searches the predefined _variables/properties_ in the global scope which is in the case of browsers, it searches through `window` object and it will extract the [window.name](https://developer.mozilla.org/en-US/docs/Web/API/Window/name) value which is equal to an **empty string**.
+- **ব্রাউজারে** যেমন _Chrome_, `name` হল একটি _ডেপ্রিকেটেড গ্লোবাল স্কোপ প্রপার্টি_। এই উদাহরনে, কোডটি _global scope_ এর ভিতরে চলছে এবং `name` এর জন্য কোনো ইউজার-ডিফাইন্ড লোকাল ভেরিয়েবল নেই, তাই এটি পূর্বনির্ধারিত _ভেরিয়েবল/প্রোপার্টি_ গ্লোবাল স্কোপে খুঁজে দেখে যা ব্রাউজারের ক্ষেত্রে, `window` অবজেক্টের ভেতরে খুঁজবে এবং এটি [window.name](https://developer.mozilla.org/en-US/docs/Web/API/Window/name) মানটি বের করবে একটি **খালি স্ট্রিং** এর সমান।
 
-- In **NodeJS**, there is no such property on the `global` object, thus attempting to access a non-existent variable will raise a [ReferenceError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_defined).
+- **নোডজেএস**-এ, `গ্লোবাল` অবজেক্টে এমন কোনো প্রপার্টি নেই, এইভাবে অস্তিত্বহীন ভেরিয়েবল অ্যাক্সেস করার চেষ্টা করলে একটি [ReferenceError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_defined) তৈরি হয়।
 
 </p>
 </details>
 
 ---
 
-###### 77. Is this a pure function?
+###### 77. এটি কি একটি বিশুদ্ধ ফাংশন?
 
 ```javascript
 function sum(a, b) {
@@ -2477,9 +2477,9 @@ function sum(a, b) {
 
 #### উত্তর: A
 
-A pure function is a function that _always_ returns the same result, if the same arguments are passed.
+একটি বিশুদ্ধ ফাংশন হল এমন একটি ফাংশন যা _সবসময়_ একই ফলাফল প্রদান করে, যদি একই আর্গুমেন্ট পাস করা হয়।
 
-The `sum` function always returns the same result. If we pass `1` and `2`, it will _always_ return `3` without side effects. If we pass `5` and `10`, it will _always_ return `15`, and so on. This is the definition of a pure function.
+`sum` ফাংশন সবসময় একই ফলাফল প্রদান করে। যদি আমরা `1` এবং `2` পাস করি, এটি _সবসময়_ পার্শ্ব প্রতিক্রিয়া ছাড়াই `3` রিটার্ন করে। যদি আমরা `5` এবং `10` পাস করি, তাহলে এটি _সবসময়_ `15` রিটার্ন করে, ইত্যাদি। এটিই হলো একটি বিশুদ্ধ ফাংশনের সংজ্ঞা।
 
 </p>
 </details>
@@ -2518,15 +2518,17 @@ console.log(addFunction(5 * 2));
 
 #### উত্তর: C
 
-The `add` function is a _memoized_ function. With memoization, we can cache the results of a function in order to speed up its execution. In this case, we create a `cache` object that stores the previously returned values.
+`add` ফাংশনটি একটি _memoized_ ফাংশন। মেমোাআইজেশনের সাহায্যে, আমরা একটি ফাংশনের ফলাফলগুলি ক্যাশ করতে পারি (ভবিষ্যতে ব্যবহারের জন্য আলাদাভাবে সংরক্ষণ করার পদ্ধতি) যাতে এটি কার্যকর করার (execution) গতি বাড়ানো যায়। এই ক্ষেত্রে, আমরা একটি `cache` অবজেক্ট তৈরি করেছি যা পূর্বের রিটার্ন করা ভ্যালুগুলো সংরক্ষণ করে।
 
-If we call the `addFunction` function again with the same argument, it first checks whether it has already gotten that value in its cache. If that's the case, the cache value will be returned, which saves execution time. Otherwise, if it's not cached, it will calculate the value and store it afterward.
+> যেহেতু এখানে `add` ফাংশনটি অন্য একটি ফাংশনকে রিটার্ন করছে যে তার স্কোপের বাহিরের ভ্যালু,`cache` অবজেক্টকে, এক্সেস করছে। ফলে এখানে একটি [ক্লোজার](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) তৈরি হয়েছে।
 
-We call the `addFunction` function three times with the same value: on the first invocation, the value of the function when `num` is equal to `10` isn't cached yet. The condition of the if-statement `num in cache` returns `false`, and the else block gets executed: `Calculated! 20` gets logged, and the value of the result gets added to the cache object. `cache` now looks like `{ 10: 20 }`.
+যদি আমরা একই আর্গুমেন্টের সাথে আবার `addFunction` ফাংশনকে কল করি, এটি প্রথমে পরীক্ষা করে যে সেই ভ্যালুটি ইতিমধ্যে cache-থেকে পেয়েছে কিনা। যদি পায়, cache-থেকেই রিটার্ন করা হবে, যা এক্সিকিউশনের সময় বাঁচায়। অন্যথায়, cache-থেকে না পেলে, এটি গণনা করে প্রাপ্ত ভ্যালুটি সংরক্ষণ করবে।
 
-The second time, the `cache` object contains the value that gets returned for `10`. The condition of the if-statement `num in cache` returns `true`, and `'From cache! 20'` gets logged.
+আমরা একই ভ্যালু দিয়ে `addFunction` ফাংশনকে কল করছি ৩ বারঃ ১ম কলের সময়, ফাংশনের ভ্যালু cache-এ নেই যখন `num` সমান সমান হয় `10`। ইফ-স্টেটম্যান্টের শর্ত `num in cache` রিটার্ন করে `false`, এবং এলস ব্লক এক্সিকিউট হয়েছেঃ `Calculated! 20` লগ হয়, এবং result-এর ভ্যালু cache অবজেক্টে সংরক্ষিত হয়। `cache` এখন হয় - `{ 10: 20 }`।
 
-The third time, we pass `5 * 2` to the function which gets evaluated to `10`. The `cache` object contains the value that gets returned for `10`. The condition of the if-statement `num in cache` returns `true`, and `'From cache! 20'` gets logged.
+২য় বারে, `cache` অবজেক্টে `10` এর জন্য যে ভ্যালুটি রিটার্ন করা হয়েছিলো সেটি আছে। ইফ-স্টেটম্যানন্টের শর্ত `num in cache` রিটার্ন করে `true`, এবং লগ হয় `'From cache! 20'`।
+
+৩য় বারে, ফাংশনে আমরা পাস করেছি `5 * 2` যেটা মূল্যায়িত হয় `10`। `cache` অবজেক্টে `10` এর জন্য যে ভ্যালুটি রিটার্ন করা হয়েছিলো সেটি আছে। ইফ-স্টেটম্যানন্টের শর্ত `num in cache` রিটার্ন করে `true`, এবং লগ হয় `'From cache! 20'`।
 
 </p>
 </details>
@@ -2557,13 +2559,13 @@ for (let item of myLifeSummedUp) {
 
 #### উত্তর: A
 
-With a _for-in_ loop, we can iterate over **enumerable** properties. In an array, the enumerable properties are the "keys" of array elements, which are actually their indexes. You could see an array as:
+একটি _for-in_ লুপ দিয়ে, আমরা **গণনাযোগ্য (enumerable)** প্রোপার্টির উপর লুপ চালাতে পারি। অ্যারেতে গণনাযোগ্য প্রোপার্টিগুলো হয় অ্যারের এলিমেন্টের "কী", যা আসলে তাদের ইনডেক্স। আপনি অ্যারেটিকে দেখতে পাবেন এমন:
 
 `{0: "☕", 1: "💻", 2: "🍷", 3: "🍫"}`
 
-Where the keys are the enumerable properties. `0` `1` `2` `3` get logged.
+যেখানে কীগুলি গণনাযোগ্য প্রোপার্টি। তাই `0` `1` `2` `3` লগ হয়েছে।
 
-With a _for-of_ loop, we can iterate over **iterables**. An array is an iterable. When we iterate over the array, the variable "item" is equal to the element it's currently iterating over, `"☕"` `"💻"` `"🍷"` `"🍫"` get logged.
+একটি _for-of_ লুপ দিয়ে, আমরা **পুনরাবৃত্তিযোগ্য (iteables)** এর উপর লুপ চালাতে পারি। অ্যারে পুনরাবৃত্তিযোগ্য। যখন আমরা অ্যারের উপর লুপ চালাই, তখন "item" ভেরিয়েবলটি বর্তমানে পুনরাবৃত্তি হচ্ছে সেই এলিমেন্টের সমান। তাই `"☕"` `"💻"` `"🍷"` `"🍫"` লগ হয়েছে।
 
 </p>
 </details>
@@ -2587,9 +2589,9 @@ console.log(list);
 
 #### উত্তর: C
 
-Array elements can hold any value. Numbers, strings, objects, other arrays, null, boolean values, undefined, and other expressions such as dates, functions, and calculations.
+অ্যারে এলিমেন্টগুলো যেকোন টাইপের ভ্যালু রাখতে পারে। নাম্বার, স্ট্রিং, অঞ্জেক্ট, অন্য অ্যারে, নাল, বুলিয়ান, আন্ডিফাইন্ড, এবং অন্যান্য এক্সপ্রেশন যেমন, তারিখ, ফাংশন, ও যেগুলো গননা যোগ্য।
 
-The element will be equal to the returned value. `1 + 2` returns `3`, `1 * 2` returns `2`, and `1 / 2` returns `0.5`.
+এলিমেন্টগুলো সমান হবে তার রিটার্ন ভ্যালু। `1 + 2` রিটার্ন করে `3`, `1 * 2` রিটার্ন করে `2`, এবং `1 / 2` রিটার্ন করে `0.5`।
 
 </p>
 </details>
