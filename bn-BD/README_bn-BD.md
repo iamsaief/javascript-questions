@@ -2938,9 +2938,9 @@ console.log(newList.push(5));
 
 #### উত্তর: D
 
-The `.push` method returns the _new length_ of the array, not the array itself! By setting `newList` equal to `[1, 2, 3].push(4)`, we set `newList` equal to the new length of the array: `4`.
+`.push` মেথড অ্যারের নতুন দৈর্ঘ্য ফেরত দেয়, অ্যারেটিকে নয়! `newList` কে `[1, 2, 3].push(4)` এর সমান সেট করার মাধ্যমে আমরা `newList` কে অ্যারের নতুন দৈর্ঘ্য `4` এর সমান করেছি।
 
-Then, we try to use the `.push` method on `newList`. Since `newList` is the numerical value `4`, we cannot use the `.push` method: a TypeError is thrown.
+তারপর, আমরা `.push` মেথডকে `newList` এ ব্যবহার করার চেষ্টা করি। যেহেতু `newList` হল একটি সংখ্যাগত মান `4`, তাই আমরা `.push` মেথড ব্যবহার করতে পারি না: একটি টাইপ এরর (TypeError) প্রদর্শিত হয়।
 
 </p>
 </details>
@@ -2971,7 +2971,7 @@ console.log(giveLydiaChocolate.prototype);
 
 #### উত্তর: D
 
-Regular functions, such as the `giveLydiaPizza` function, have a `prototype` property, which is an object (prototype object) with a `constructor` property. Arrow functions however, such as the `giveLydiaChocolate` function, do not have this `prototype` property. `undefined` gets returned when trying to access the `prototype` property using `giveLydiaChocolate.prototype`.
+সাধারণ ফাংশনগুলির, যেমন `giveLydiaPizza` ফাংশনের, একটি `prototype` প্রপার্টি থাকে, যা একটি অবজেক্ট (প্রোটোটাইপ অবজেক্ট) এবং এতে একটি `constructor` প্রপার্টি থাকে। তবে, অ্যারো ফাংশনগুলির, যেমন `giveLydiaChocolate` ফাংশনের, এই `prototype` প্রপার্টি থাকে না। যখন `giveLydiaChocolate.prototype` প্রপার্টি অ্যাক্সেস করার চেষ্টা করা হয়, তখন `undefined` রিটার্ন করা হয়।
 
 </p>
 </details>
@@ -3001,14 +3001,15 @@ for (const [x, y] of Object.entries(person)) {
 
 #### উত্তর: A
 
-`Object.entries(person)` returns an array of nested arrays, containing the keys and objects:
+`Object.entries(person)` একটি নেস্টেড অ্যারের একটি অ্যারে রিটার্ন করে, যার প্রতিটি এলিমেন্টে থাকে কী এবং ভ্যালু:
 
 `[ [ 'name', 'Lydia' ], [ 'age', 21 ] ]`
 
-Using the `for-of` loop, we can iterate over each element in the array, the subarrays in this case. We can destructure the subarrays instantly in the for-of loop, using `const [x, y]`. `x` is equal to the first element in the subarray, `y` is equal to the second element in the subarray.
+`for-of` লুপ ব্যবহার করে, আমরা অ্যারের প্রতিটি এলিমেন্টের, এই ক্ষেত্রে সাবঅ্যারেগুলি, তে ইটারেট করতে পারি। আমরা `for-of` লুপে সাবঅ্যারেগুলিকে সাথে সাথে ডিস্ট্রাকচার করতে পারি, `const [x, y]` ব্যবহার করে। `x` সাবঅ্যারের প্রথম এলিমেন্টের সমান হয়, `y` সাবঅ্যারের দ্বিতীয় এলিমেন্টের সমান হয়।
 
-The first subarray is `[ "name", "Lydia" ]`, with `x` equal to `"name"`, and `y` equal to `"Lydia"`, which get logged.
-The second subarray is `[ "age", 21 ]`, with `x` equal to `"age"`, and `y` equal to `21`, which get logged.
+প্রথম সাবঅ্যারে `[ "name", "Lydia" ]`, যেখানে `x` `"name"` এর সমান এবং `y` `"Lydia"` এর সমান, যা লগ করা হয়।
+
+দ্বিতীয় সাবঅ্যারে `[ "age", 21 ]`, যেখানে `x` `"age"` এর সমান এবং `y` `21` এর সমান, যা লগ করা হয়।
 
 </p>
 </details>
@@ -3035,7 +3036,7 @@ getItems(["banana", "apple"], "pear", "orange")
 
 #### উত্তর: D
 
-`...args` is a rest parameter. The rest parameter's value is an array containing all remaining arguments, **and can only be the last parameter**! In this example, the rest parameter was the second parameter. This is not possible, and will throw a syntax error.
+`...args` হল একটি রেস্ট প্যারামিটার। রেস্ট প্যারামিটারের মান একটি অ্যারে হয় যা সমস্ত অবশিষ্ট আর্গুমেন্ট ধারণ করে, **এবং এটি শুধুমাত্র শেষ প্যারামিটার হতে পারে**! এই উদাহরণে, রেস্ট প্যারামিটারটি দ্বিতীয় প্যারামিটার ছিল। এটি সম্ভব নয় এবং একটি সিনট্যাক্স এরর ঘটাবে।
 
 ```javascript
 function getItems(fruitList, favoriteFruit, ...args) {
@@ -3045,7 +3046,7 @@ function getItems(fruitList, favoriteFruit, ...args) {
 getItems(['banana', 'apple'], 'pear', 'orange');
 ```
 
-The above example works. This returns the array `[ 'banana', 'apple', 'orange', 'pear' ]`
+উপরের উদাহরণটি সঠিকভাবে কাজ করে। এটি অ্যারে `[ 'banana', 'apple', 'orange', 'pear' ]` রিটার্ন করে দেয়।
 
 </p>
 </details>
@@ -3076,16 +3077,16 @@ console.log(nums(1, 2));
 
 #### উত্তর: B
 
-In JavaScript, we don't _have_ to write the semicolon (`;`) explicitly, however the JavaScript engine still adds them after statements. This is called **Automatic Semicolon Insertion**. A statement can for example be variables, or keywords like `throw`, `return`, `break`, etc.
+জাভাস্ক্রিপ্টে, আমাদের স্পষ্টভাবে সেমিকোলন (`;`) _না লিখলে হবে_, তবে জাভাস্ক্রিপ্ট ইঞ্জিনই স্টেটম্যান্টের পরে সেগুলি যোগ করে দেয়। এটিকে **স্বয়ংক্রিয় সেমিকোলন সংযোজন** (Automatic Semicolon Insertion) বলা হয়। একটি স্টেটম্যান্ট হতে পারে উদাহরণস্বরূপ ভেরিয়েবলগুলি, বা কীওয়ার্ড যেমন `throw`, `return`, `break`, ইত্যাদি।
 
-Here, we wrote a `return` statement, and another value `a + b` on a _new line_. However, since it's a new line, the engine doesn't know that it's actually the value that we wanted to return. Instead, it automatically added a semicolon after `return`. You could see this as:
+এখানে, আমরা একটি `return` স্টেটম্যান্টের লিখেছি, এবং আরেকটি মান `a + b` একটি _নতুন লাইনে_। তবে, যেহেতু এটি একটি নতুন লাইন, ইঞ্জিন জানে না যে এটি আসলে সেই মান যা আমরা ফেরত দিতে চেয়েছিলাম। পরিবর্তে, এটি স্বয়ংক্রিয়ভাবে `return` এর পরে একটি সেমিকোলন যোগ করেছে। আপনি এরকম ভাবতে পারেন:
 
 ```javascript
 return;
 a + b;
 ```
 
-This means that `a + b` is never reached, since a function stops running after the `return` keyword. If no value gets returned, like here, the function returns `undefined`. Note that there is no automatic insertion after `if/else` statements!
+এর মানে হল যে `a + b`-তে কখনই পৌঁছানো হয় না, কারণ একটি ফাংশন `return` কীওয়ার্ডের পরে চলা বন্ধ করে দেয়। যদি কোনও মান রিটার্ন না করা হয়, যেমন এখানে, ফাংশন `undefined` রিটার্ন করে। লক্ষ্য করবেন যে `if/else` স্টেটম্যান্টের পরে কোনও স্বয়ংক্রিয় সংযোজন নেই!
 
 </p>
 </details>
@@ -3121,7 +3122,7 @@ console.log(member.name);
 
 #### উত্তর: B
 
-We can set classes equal to other classes/function constructors. In this case, we set `Person` equal to `AnotherPerson`. The name on this constructor is `Sarah`, so the name property on the new `Person` instance `member` is `"Sarah"`.
+আমরা ক্লাসগুলিকে অন্য ক্লাস/ফাংশন কনস্ট্রাক্টরের সমান সেট করতে পারি। এই ক্ষেত্রে, আমরা `Person`-কে `AnotherPerson` এর সমান করেছি। এই কনস্ট্রাক্টরের নাম `Sarah`, তাই নতুন `Person` ইনস্ট্যান্স `member` এর name প্রপার্টি `"Sarah"` হবে।
 
 </p>
 </details>
@@ -3149,9 +3150,9 @@ console.log(Object.keys(info));
 
 #### উত্তর: D
 
-A Symbol is not _enumerable_. The Object.keys method returns all _enumerable_ key properties on an object. The Symbol won't be visible, and an empty array is returned. When logging the entire object, all properties will be visible, even non-enumerable ones.
+একটি Symbol _enumerable_ নয়। Object.keys মেথড একটি অবজেক্টের সমস্ত _enumerable_ কী প্রপার্টিগুলি রিটার্ন করে। Symbol দৃশ্যমান হবে না, এবং একটি খালি অ্যারে রিটার্ন করে। পুরো অবজেক্টটি লগ করলে, সমস্ত প্রপার্টি দৃশ্যমান হবে, এমনকি non-enumerable প্রপার্টিগুলিও।
 
-This is one of the many qualities of a symbol: besides representing an entirely unique value (which prevents accidental name collision on objects, for example when working with 2 libraries that want to add properties to the same object), you can also "hide" properties on objects this way (although not entirely. You can still access symbols using the `Object.getOwnPropertySymbols()` method).
+এটি একটি Symbol এর অনেক গুণাবলীর মধ্যে একটি: সম্পূর্ণ অনন্য মান উপস্থাপন করার পাশাপাশি (যা অবজেক্টগুলিতে আকস্মিক নাম সংঘর্ষ প্রতিরোধ করে, উদাহরণস্বরূপ যখন দুটি লাইব্রেরি অবজেক্টে একই প্রপার্টি যোগ করতে চায়), আপনি এই উপায়ে অবজেক্টগুলিতে প্রপার্টিগুলি "লুকাতে" পারেন (যদিও সম্পূর্ণরূপে নয়। আপনি এখনও `Object.getOwnPropertySymbols()` মেথড ব্যবহার করে Symbol গুলিতে অ্যাক্সেস করতে পারেন)।
 
 </p>
 </details>
@@ -3181,15 +3182,15 @@ console.log(getUser(user))
 
 #### উত্তর: A
 
-The `getList` function receives an array as its argument. Between the parentheses of the `getList` function, we destructure this array right away. You could see this as:
+`getList` ফাংশনটি একটি অ্যারে আর্গুমেন্ট হিসাবে গ্রহণ করে। `getList` ফাংশনের বন্ধনীর মধ্যে, আমরা এই অ্যারেটি সাথে সাথে ডিস্ট্রাকচার করি। আপনি এটি এভাবে দেখতে পারেন:
 
 `[x, ...y] = [1, 2, 3, 4]`
 
-With the rest parameter `...y`, we put all "remaining" arguments in an array. The remaining arguments are `2`, `3` and `4` in this case. The value of `y` is an array, containing all the rest parameters. The value of `x` is equal to `1` in this case, so when we log `[x, y]`, `[1, [2, 3, 4]]` gets logged.
+রেস্ট প্যারামিটার `...y` ব্যবহার করে, আমরা সমস্ত "অবশিষ্ট" আর্গুমেন্টগুলিকে একটি অ্যারেতে রাখি। এই ক্ষেত্রে অবশিষ্ট আর্গুমেন্টগুলি হল `2`, `3` এবং `4`। `y` এর মান একটি অ্যারে, যা সমস্ত রেস্ট প্যারামিটার ধারণ করে। `x` এর মান এই ক্ষেত্রে `1`, তাই যখন আমরা `[x, y]` লগ করি, তখন `[1, [2, 3, 4]]` লগ হয়।
 
-The `getUser` function receives an object. With arrow functions, we don't _have_ to write curly brackets if we just return one value. However, if you want to instantly return an _object_ from an arrow function, you have to write it between parentheses, otherwise everything between the two braces will be interpreted as a block statement. In this case the code between the braces is not a valid JavaScript code, so a `SyntaxError` gets thrown.
+`getUser` ফাংশনটি একটি অবজেক্ট গ্রহণ করে। অ্যারো ফাংশনের ক্ষেত্রে, আমরা যদি কেবল একটি মান ফেরত দিতে চাই তবে আমাদের কার্লি ব্র্যাকেট লিখতে _হবে না_। তবে, যদি আপনি অ্যারো ফাংশন থেকে সাথে সাথে একটি _অবজেক্ট_ ফেরত দিতে চান, তবে আপনাকে এটি বন্ধনীর মধ্যে লিখতে হবে, অন্যথায় দুটি ব্রেসের মধ্যে থাকা সবকিছু একটি ব্লক স্টেটমেন্ট হিসাবে গণ্য করা হবে। এই ক্ষেত্রে ব্রেসের মধ্যে থাকা কোডটি একটি বৈধ জাভাস্ক্রিপ্ট কোড নয়, তাই একটি `SyntaxError` প্রদর্শিত হয়।
 
-The following function would have returned an object:
+নিম্নলিখিত ফাংশনটি একটি অবজেক্ট ফেরত দিত:
 
 `const getUser = user => ({ name: user.name, age: user.age })`
 
@@ -3216,19 +3217,20 @@ console.log(name());
 
 #### উত্তর: C
 
-The variable `name` holds the value of a string, which is not a function, and thus cannot be invoked.
+ভেরিয়েবল `name` একটি স্ট্রিং মান ধারণ করে, যা একটি ফাংশন নয়, এবং তাই এটি ইনভোক (কল) করা সম্ভব নয়।
 
-TypeErrors get thrown when a value is not of the expected type. JavaScript expected `name` to be a function since we're trying to invoke it. It was a string however, so a TypeError gets thrown: name is not a function!
+`TypeErrors` তখন প্রদর্শিত হয় যখন কোনও মান প্রত্যাশিত টাইপের না হয়। জাভাস্ক্রিপ্ট আশা করেছিল যে `name` একটি ফাংশন হবে কারণ আমরা এটি ইনভোক করার চেষ্টা করছি। কিন্তু এটি একটি স্ট্রিং ছিল, তাই একটি TypeError প্রদর্শিত হয়: name is not a function!
 
-SyntaxErrors get thrown when you've written something that isn't valid JavaScript, for example when you've written the word `return` as `retrun`.
-ReferenceErrors get thrown when JavaScript isn't able to find a reference to a value that you're trying to access.
+`SyntaxErrors` তখন প্রদর্শিত হয় যখন আপনি এমন কিছু লিখেছেন যা বৈধ জাভাস্ক্রিপ্ট নয়, উদাহরণস্বরূপ যখন আপনি `return` শব্দটিকে `retrun` হিসাবে লিখেছেন।
+
+`ReferenceErrors` তখন প্রদর্শিত হয় যখন জাভাস্ক্রিপ্ট সেই মানটির রেফারেন্স খুঁজে পায় না যা আপনি অ্যাক্সেস করার চেষ্টা করছেন।
 
 </p>
 </details>
 
 ---
 
-###### 100. What's the value of output?
+###### 100. এটার আউটপুটের ভ্যালু কি?
 
 ```javascript
 // 🎉✨ This is my 100th question! ✨🎉
@@ -3247,16 +3249,16 @@ You should${'' && `n't`} see a therapist after so much JavaScript lol`;
 
 #### উত্তর: B
 
-`[]` is a truthy value. With the `&&` operator, the right-hand value will be returned if the left-hand value is a truthy value. In this case, the left-hand value `[]` is a truthy value, so `"Im'` gets returned.
+`[]` একটি truthy মান। `&&` অপারেটরের সাথে, বাম পাশের মান যদি একটি truthy মান হয়, তাহলে ডান পাশের মানটি ফেরত দেওয়া হবে। এই ক্ষেত্রে, বাম পাশের মান `[]` একটি truthy মান, তাই `"I'm"` ফেরত দেওয়া হয়।
 
-`""` is a falsy value. If the left-hand value is falsy, nothing gets returned. `n't` doesn't get returned.
+`""` একটি falsy মান। যদি বাম পাশের মান falsy হয়, তাহলে কিছুই ফেরত দেওয়া হয় না। `n't` ফেরত দেওয়া হয় না।
 
 </p>
 </details>
 
 ---
 
-###### 101. What's the value of output?
+###### 101. এটার আউটপুটের ভ্যালু কি?
 
 ```javascript
 const one = false || {} || null;
@@ -3289,7 +3291,7 @@ With the `||` operator, we can return the first truthy operand. If all values ar
 
 ---
 
-###### 102. What's the value of output?
+###### 102. এটার আউটপুটের ভ্যালু কি?
 
 ```javascript
 const myPromise = () => Promise.resolve('I have resolved!');
@@ -3333,7 +3335,7 @@ This means that it waited for the `myPromise` to resolve with the value `I have 
 
 ---
 
-###### 103. What's the value of output?
+###### 103. এটার আউটপুটের ভ্যালু কি?
 
 ```javascript
 const set = new Set();
