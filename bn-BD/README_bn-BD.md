@@ -3665,16 +3665,17 @@ console.log(two.next().value);
 
 #### উত্তর: C
 
-With the `yield` keyword, we `yield` values in a generator function. With the `yield*` keyword, we can yield values from another generator function, or iterable object (for example an array).
+`yield` কিওয়ার্ড দিয়ে, আমরা জেনারেটর ফাংশন থেকে ভ্যালুগুলো `yield` করতে পারি। `yield*` কিওয়ার্ড দিয়ে, আমরা অন্য জেনারেটর ফাংশন থেকে ভ্যালুগুলো, বা ইটারেবল অবজেক্ট (যেমন একটি অ্যারে) থেকে ভ্যালুগুলো `yield` করতে পারি।
 
-In `generatorOne`, we yield the entire array `['a', 'b', 'c']` using the `yield` keyword. The value of `value` property on the object returned by the `next` method on `one` (`one.next().value`) is equal to the entire array `['a', 'b', 'c']`.
+`generatorOne` এ, আমরা `yield` কিওয়ার্ড ব্যবহার করে সম্পুর্ন অ্যারে `['a', 'b', 'c']` -কে `yield` করছি।
+`one` এর ক্ষেত্রে, (`one.next().value`) এর `next` মেথডের রিটার্ন করা অবজেক্টে `value` প্রোপার্টির ভ্যালু সমান হলো সম্পুর্ন অ্যারেটি- `['a', 'b', 'c']`।
 
 ```javascript
 console.log(one.next().value); // ['a', 'b', 'c']
 console.log(one.next().value); // undefined
 ```
 
-In `generatorTwo`, we use the `yield*` keyword. This means that the first yielded value of `two`, is equal to the first yielded value in the iterator. The iterator is the array `['a', 'b', 'c']`. The first yielded value is `a`, so the first time we call `two.next().value`, `a` is returned.
+`generatorTwo` এ, আমরা `yield*` কিওয়ার্ড ব্যবহার করেছি। এর মানে হলো, `two` এ প্রথম yield হওয়া ভ্যালু সমান হচ্ছে ইটারেটরের (`['a', 'b', 'c']`) প্রথম yield হওয়া ভ্যালু। প্রথম yield হওয়া ভ্যালু হলো `a`, তাই প্রথমবার `two.next().value` কল করলে রিটার্ন করে `a`।
 
 ```javascript
 console.log(two.next().value); // 'a'
@@ -3704,14 +3705,14 @@ console.log(`${((x) => x)('I love')} to program`);
 
 #### উত্তর: A
 
-Expressions within template literals are evaluated first. This means that the string will contain the returned value of the expression, the immediately invoked function `(x => x)('I love')` in this case. We pass the value `'I love'` as an argument to the `x => x` arrow function. `x` is equal to `'I love'`, which gets returned. This results in `I love to program`.
+টেমপ্লেট লিটারেলের মধ্যে থাকা এক্সপ্রেশনের মান নির্ণয় হয় সর্বপ্রথমে। এর মানে হলো, এক্সপ্রেশন থেকে রিটার্ন করা ভ্যালুটি স্ট্রিং এর মধ্যে থাকবে, এক্ষেত্রে, `(x => x)('I love')` ইমিডিয়েটলি ইনভোকড ফাংশন। আমরা `x => x` অ্যারো ফাংশনের একটি আর্গুমেন্ট হিসেবে `'I love'` স্ট্রিংটি পাস করছি। তাই `x` সমান হয় `'I love'`, যেটা রিটার্ন করা হয়। তাই ফলাফল হিসেবে `I love to program` পাওয়া যাচ্ছে।
 
 </p>
 </details>
 
 ---
 
-###### 114. What will happen?
+###### 114. এখানে কি ঘটবে?
 
 ```javascript
 let config = {
@@ -3733,18 +3734,16 @@ config = null;
 
 #### উত্তর: C
 
-Normally when we set objects equal to `null`, those objects get _garbage collected_ as there is no reference anymore to that object. However, since the callback function within `setInterval` is an arrow function (thus bound to the `config` object), the callback function still holds a reference to the `config` object.
-As long as there is a reference, the object won't get garbage collected.
-Since this is an interval, setting `config` to `null` or `delete`-ing `config.alert` won't garbage-collect the interval, so the interval will still be called.
-It should be cleared with `clearInterval(config.alert)` to remove it from memory.
-Since it was not cleared, the `setInterval` callback function will still get invoked every 1000ms (1s).
+সধারনত যখন আমরা অবজেক্ট সমান `null` সেট করি, সেই অবজেক্টগুলো _গারবেজ কালেক্টেড_ হয়ে যায় যেহেতু ঐ অবজেক্টের আর কোন রেফারেন্স থাকে না। অন্যদিকে, যেহেতু `setInterval` এর কলব্যাক ফাংশনটি একটি অ্যারো ফাংশন (এজন্য `config` অবজেক্টের ভেতর আবদ্ধ থাকছে), কলব্যাক ফাংশনটি এখনো `config` অবজেক্টের রেফারেন্স ধরে রেখেছে।
+
+যতক্ষণ পর্যন্ত রেফারেন্স থাকছে, অবজেক্টটি _গারবেজ কালেক্টেড_ হবে না। যেহেতু এটি ইন্টারভাল (টাইমার), `config` অবজেক্টকে `null` সেট করা বা `delete` করলেও ইন্টারভাল _গারবেজ কালেক্টেড_ হবে না, তাই ইন্টারভালটি এখনো কল হবে। এটাকে মেমরি থেকে মুছে ফেলার জন্য একে ক্লিয়ার করা উচিৎ `clearInterval(config.alert)` দিয়ে। যেহেতু এটি ক্লিয়ার হয়নি, `setInterval` এর কলব্যাক ফাংশনটি এখনো কল হতে থাকবে প্রতি ১০০০ মিলিসেকেন্ড (১ সেকেন্ড) পরপর।
 
 </p>
 </details>
 
 ---
 
-###### 115. Which method(s) will return the value `'Hello world!'`?
+###### 115. কোন মেথড(গুলো) `'Hello world!'` ভ্যালুটি রিটার্ন করবে?
 
 ```javascript
 const myMap = new Map();
@@ -3770,12 +3769,12 @@ myMap.get(() => 'greeting');
 
 #### উত্তর: B
 
-When adding a key/value pair using the `set` method, the key will be the value of the first argument passed to the `set` function, and the value will be the second argument passed to the `set` function. The key is the _function_ `() => 'greeting'` in this case, and the value `'Hello world'`. `myMap` is now `{ () => 'greeting' => 'Hello world!' }`.
+যখন `set` মেথড ব্যবহার করে কি/ভ্যালু জোড় যুক্ত করা হয়, `set` মেথডে পাস করা প্রথম আর্গুমেন্ট হবে _কি_ এবং দ্বিতীয়টি হবে _ভ্যালু_। এক্ষেত্রে _কি_ হলো _function_ `() => 'greeting'` এবং _ভ্যালু_ হলো `'Hello world'`। ফলে `myMap` এখন হয় এমন - `{ () => 'greeting' => 'Hello world!' }`
 
-1 is wrong, since the key is not `'greeting'` but `() => 'greeting'`.
-3 is wrong, since we're creating a new function by passing it as a parameter to the `get` method. Object interacts by _reference_. Functions are objects, which is why two functions are never strictly equal, even if they are identical: they have a reference to a different spot in memory.
+**1**, `myMap.get('greeting')`টি ভুল, যেহতু কি `'greeting'` নয় বরং `() => 'greeting'`।
 
-</p>
+**3**, `myMap.get(() => 'greeting')` টিও ভুল, যেহেতু আমরা নতুন একটি ফাংশন তৈরি করছি এটাকে প্যারামিটার হিসেবে `set` মেথডে পাস করার মাধ্যমে। অবজেক্ট _reference_ দ্বারা ইন্টারঅ্যাক্ট করে। ফাংশন হল অবজেক্ট, যে কারণে দুটি ফাংশন কখনোই কঠোরভাবে সমান হয় না, এমনকি তারা যদি হুবহু একই হয়: তাদের কাছে মেমরিতে আলাদা আলাদা রেফারেন্স থাকে।
+
 </details>
 
 ---
@@ -3810,18 +3809,18 @@ console.log(person);
 
 #### উত্তর: C
 
-Both the `changeAge` and `changeAgeAndName` functions have a default parameter, namely a _newly_ created object `{ ...person }`. This object has copies of all the key/values in the `person` object.
+`changeAge` এবং `changeAgeAndName` উভয় ফাংশনেরই একটি ডিফল্ট প্যারামিটার আছে, উল্লেখ্য এরা _নতুন_ তৈরিকৃত অবজেক্ট `{ ...person }`। এই অবজেক্টে `person` অবজেক্টের সমস্ত কী/ভ্যালুগুলির কপি রয়েছে৷
 
-First, we invoke the `changeAge` function and pass the `person` object as its argument. This function increases the value of the `age` property by 1. `person` is now `{ name: "Lydia", age: 22 }`.
+প্রথমত, আমরা `changeAge` ফাংশনকে কল করি এবং `person` অবজেক্টটিকে এর আর্গুমেন্ট হিসেবে পাস করি। এই ফাংশনটি `age` প্রোপার্টির মান 1 দ্বারা বৃদ্ধি করে। `person` এখন `{ name: "Lydia", age: 22 }`।
 
-Then, we invoke the `changeAgeAndName` function, however we don't pass a parameter. Instead, the value of `x` is equal to a _new_ object: `{ ...person }`. Since it's a new object, it doesn't affect the values of the properties on the `person` object. `person` is still equal to `{ name: "Lydia", age: 22 }`.
+তারপর, আমরা `changeAgeAndName` ফাংশন কল করি, তবে আমরা কোনো প্যারামিটার পাস করিনি। ফলে, `x` এর ভ্যালু সমান হয় _নতুন_ তৈরিকৃত অবজেক্ট `{ ...person }`। যেহেতু এটি একটি নতুন অবজেক্ট, এটি `person` অবজেক্টের কোন প্রোপার্টির ভ্যালুকে প্রভাবিত করে না। `person` এখনও `{ name: "Lydia", age: 22 }` এর সমান।
 
 </p>
 </details>
 
 ---
 
-###### 117. Which of the following options will return `6`?
+###### 117. উল্লেখ্য কোন অপশনটি রিটার্ন করে `6`?
 
 ```javascript
 function sumValues(x, y, z) {
@@ -3839,7 +3838,7 @@ function sumValues(x, y, z) {
 
 #### উত্তর: C
 
-With the spread operator `...`, we can _spread_ iterables to individual elements. The `sumValues` function receives three arguments: `x`, `y` and `z`. `...[1, 2, 3]` will result in `1, 2, 3`, which we pass to the `sumValues` function.
+স্প্রেড অপারেটর দিয়ে `...`, আমরা ইটারেবল গুলোকে আলদা এলিমেন্টে স্প্রেড করতে পারি। `sumValues` ফাংশনটি ৩টি আর্গুমেন্ট রিসিভ করছে `x`, `y` ও `z`। কেবল `...[1, 2, 3]` -এর ফলাফল হয় `1, 2, 3`, যেটা আমরা `sumValues` ফাংশনে পাস করেছি।
 
 </p>
 </details>
@@ -3865,7 +3864,7 @@ console.log(list[(num += 1)]);
 
 #### উত্তর: B
 
-With the `+=` operator, we're incrementing the value of `num` by `1`. `num` had the initial value `1`, so `1 + 1` is `2`. The item on the second index in the `list` array is 🥰, `console.log(list[2])` prints 🥰.
+`+=` অপারেটর দিয়ে, আমরা `num` এর ভ্যালু `1` বৃদ্ধি করছি। `num` এর প্রাথমিক ভ্যালু ছিল `1`, ফলে `1 + 1` হয় `2`। `list` অ্যারের ২ নাম্বার ইনডেক্স আইটেমের ভ্যালু পাওয়া যায় 🥰, `console.log(list[2])` প্রিন্ট করছে 🥰।
 
 </p>
 </details>
@@ -3903,12 +3902,15 @@ console.log(member.getLastName?.());
 
 #### উত্তর: B
 
-With the optional chaining operator `?.`, we no longer have to explicitly check whether the deeper nested values are valid or not. If we're trying to access a property on an `undefined` or `null` value (_nullish_), the expression short-circuits and returns `undefined`.
+অপশনাল চেইনিং অপারেটর `?.` দিয়ে, কোন ডিপার নেস্টেড ভ্যালুগুলো ভ্যালিড কিনা তা আমাদের সরাসরি চেক করার প্রয়োজন হয় না যে। যদি আমরা কোন `undefined` বা `null` ভ্যালু (_নালিশ_) কে এক্সেস করার চেষ্টা করি, এক্সপ্রেশনটি সেখানেই কাজ করা বন্ধ করে দেয় এবং `undefined` রিটার্ন করে।
 
-`person.pet?.name`: `person` has a property named `pet`: `person.pet` is not nullish. It has a property called `name`, and returns `Mara`.
-`person.pet?.family?.name`: `person` has a property named `pet`: `person.pet` is not nullish. `pet` does _not_ have a property called `family`, `person.pet.family` is nullish. The expression returns `undefined`.
-`person.getFullName?.()`: `person` has a property named `getFullName`: `person.getFullName()` is not nullish and can get invoked, which returns `Lydia Hallie`.
-`member.getLastName?.()`: variable `member` is non-existent therefore a `ReferenceError` gets thrown!
+- `person.pet?.name` এর ক্ষেত্রে, `person` অবজেক্টে `pet` প্রোপার্টি আছেঃ `person.pet` নালিশ নয়। এটায় `name` নামের একটি প্রোপার্টি আছে, এবং রিটার্ন করছে `Mara`।
+
+- `person.pet?.family?.name` এর ক্ষেত্রে, `person` অবজেক্টে `pet` প্রোপার্টি আছেঃ `person.pet` নালিশ নয়। এটায় `family` নামের কোন প্রোপার্টি নেই, `person.pet.family` হলো নালিশ। এক্সপ্রেশনটি `undefined` রিটার্ন করে।
+
+- `person.getFullName?.()` এর ক্ষত্রে, `person` অবজেক্টে `getFullName` প্রোপার্টি আছেঃ `person.getFullName()` নালিশ নয় এবং কল করতে পেরেছে, যেটা `Lydia Hallie` রিটার্ন করছে।
+
+- `member.getLastName?.()` এর ক্ষেত্রে, `member` ভ্যারিয়েবলটিকেই পাওয়া যাচ্ছে না বলে `ReferenceError` ঘটছে।
 
 </p>
 </details>
@@ -3937,7 +3939,7 @@ if (groceries.indexOf('banana')) {
 
 #### উত্তর: B
 
-We passed the condition `groceries.indexOf("banana")` to the if-statement. `groceries.indexOf("banana")` returns `0`, which is a falsy value. Since the condition in the if-statement is falsy, the code in the `else` block runs, and `We don't have to buy bananas!` gets logged.
+আমরা ইফ-এলস স্টেটমেন্টে `groceries.indexOf("banana")` শর্ত দিয়েছি। `groceries.indexOf("banana")` রিটার্ন করে `0`, যেটা ফলসি ভ্যালু। যেতেতু ইফ-এলস স্টেটমেন্টের শর্ত ফলসি, তাই `else` ব্লকের কোডটি চলেছে, এবং `We don't have to buy bananas!` লগ হয়েছে।
 
 </p>
 </details>
@@ -3967,7 +3969,7 @@ console.log(config.language);
 
 #### উত্তর: D
 
-The `language` method is a `setter`. Setters don't hold an actual value, their purpose is to _modify_ properties. When calling a `setter` method, `undefined` gets returned.
+`language` মেথডটি হলো একটি `setter`। Setters কোন ভ্যালুকেই ধরে রাখে না, তাদের উদ্দ্যেশই হলো প্রোপার্টিগুলোকে পরিবর্তন করা। যখন `setter` মেথড কল করা হয়, `undefined` রিটার্ন করে।
 
 </p>
 </details>
@@ -3993,9 +3995,9 @@ console.log(!typeof name === 'string');
 
 #### উত্তর: C
 
-`typeof name` returns `"string"`. The string `"string"` is a truthy value, so `!typeof name` returns the boolean value `false`. `false === "object"` and `false === "string"` both return`false`.
+`typeof name` রিটার্ন করে `"string"`। স্ট্রিং - `"string"` হলো একটি সত্য ভ্যালু, তাই `!typeof name` রিটার্ন করে বুলিয়ান ভ্যালু `false`। `false === "object"` এবং `false === "string"` উভয়েই রিটার্ন করে `false`।
 
-(If we wanted to check whether the type was (un)equal to a certain type, we should've written `!==` instead of `!typeof`)
+(যদি আমরা চেক করতে চাইতাম যে কোন একটি টাইপ একটি নির্দিষ্ট টাইপের (অ)সমান কিনা, আমাদের `!typeof` এর পরিবর্তে `!==` লেখা উচিৎ ছিল ।)
 
 </p>
 </details>
