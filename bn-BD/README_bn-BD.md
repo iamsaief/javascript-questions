@@ -52,7 +52,7 @@
 function sayHi() {
   console.log(name);
   console.log(age);
-  var name = 'Lydia';
+  var name = "Lydia";
   let age = 21;
 }
 
@@ -148,7 +148,7 @@ console.log(shape.perimeter());
 
 ```javascript
 +true;
-!'Lydia';
+!"Lydia";
 ```
 
 - A: `1` and `false`
@@ -173,11 +173,11 @@ console.log(shape.perimeter());
 
 ```javascript
 const bird = {
-  size: 'small',
+  size: "small",
 };
 
 const mouse = {
-  name: 'Mickey',
+  name: "Mickey",
   small: true,
 };
 ```
@@ -206,11 +206,11 @@ const mouse = {
 ###### 6. এটার আউটপুট কোনটা?
 
 ```javascript
-let c = { greeting: 'Hey!' };
+let c = { greeting: "Hey!" };
 let d;
 
 d = c;
-c.greeting = 'Hello';
+c.greeting = "Hello";
 console.log(d.greeting);
 ```
 
@@ -280,13 +280,13 @@ class Chameleon {
     return this.newColor;
   }
 
-  constructor({ newColor = 'green' } = {}) {
+  constructor({ newColor = "green" } = {}) {
     this.newColor = newColor;
   }
 }
 
-const freddie = new Chameleon({ newColor: 'purple' });
-console.log(freddie.colorChange('orange'));
+const freddie = new Chameleon({ newColor: "purple" });
+console.log(freddie.colorChange("orange"));
 ```
 
 - A: `orange`
@@ -341,10 +341,10 @@ console.log(greetign);
 
 ```javascript
 function bark() {
-  console.log('Woof!');
+  console.log("Woof!");
 }
 
-bark.animal = 'dog';
+bark.animal = "dog";
 ```
 
 - A: Nothing, this is totally fine!
@@ -374,7 +374,7 @@ function Person(firstName, lastName) {
   this.lastName = lastName;
 }
 
-const member = new Person('Lydia', 'Hallie');
+const member = new Person("Lydia", "Hallie");
 Person.getFullName = function () {
   return `${this.firstName} ${this.lastName}`;
 };
@@ -415,8 +415,8 @@ function Person(firstName, lastName) {
   this.lastName = lastName;
 }
 
-const lydia = new Person('Lydia', 'Hallie');
-const sarah = Person('Sarah', 'Smith');
+const lydia = new Person("Lydia", "Hallie");
+const sarah = Person("Sarah", "Smith");
 
 console.log(lydia);
 console.log(sarah);
@@ -486,7 +486,7 @@ function sum(a, b) {
   return a + b;
 }
 
-sum(1, '2');
+sum(1, "2");
 ```
 
 - A: `NaN`
@@ -553,7 +553,7 @@ function getPersonInfo(one, two, three) {
   console.log(three);
 }
 
-const person = 'Lydia';
+const person = "Lydia";
 const age = 21;
 
 getPersonInfo`${person} is ${age} years old`;
@@ -580,9 +580,9 @@ getPersonInfo`${person} is ${age} years old`;
 ```javascript
 function checkAge(data) {
   if (data === { age: 18 }) {
-    console.log('You are an adult!');
+    console.log("You are an adult!");
   } else if (data == { age: 18 }) {
-    console.log('You are still an adult.');
+    console.log("You are still an adult.");
   } else {
     console.log(`Hmm.. You don't have an age I guess`);
   }
@@ -642,7 +642,7 @@ getAge(21);
 
 ```javascript
 function getAge() {
-  'use strict';
+  "use strict";
   age = 21;
   console.log(age);
 }
@@ -670,7 +670,7 @@ getAge();
 ###### 21. কোনটি `sum` এর ভ্যালু হবে?
 
 ```javascript
-const sum = eval('10*10+5');
+const sum = eval("10*10+5");
 ```
 
 - A: `105`
@@ -693,7 +693,7 @@ const sum = eval('10*10+5');
 ###### 22. কতক্ষণ cool_secret এক্সেসযোগ্য?
 
 ```javascript
-sessionStorage.setItem('cool_secret', 123);
+sessionStorage.setItem("cool_secret", 123);
 ```
 
 - A: Forever, the data doesn't get lost.
@@ -746,12 +746,12 @@ console.log(num);
 ###### 24. এটার আউটপুট কোনটা?
 
 ```javascript
-const obj = { 1: 'a', 2: 'b', 3: 'c' };
+const obj = { 1: "a", 2: "b", 3: "c" };
 const set = new Set([1, 2, 3, 4, 5]);
 
-obj.hasOwnProperty('1');
+obj.hasOwnProperty("1");
 obj.hasOwnProperty(1);
-set.has('1');
+set.has("1");
 set.has(1);
 ```
 
@@ -777,7 +777,7 @@ set.has(1);
 ###### 25. এটার আউটপুট কোনটা?
 
 ```javascript
-const obj = { a: 'one', b: 'two', a: 'three' };
+const obj = { a: "one", b: "two", a: "three" };
 console.log(obj);
 ```
 
@@ -846,10 +846,10 @@ for (let i = 1; i < 5; i++) {
 
 ```javascript
 String.prototype.giveLydiaPizza = () => {
-  return 'Just give Lydia pizza already!';
+  return "Just give Lydia pizza already!";
 };
 
-const name = 'Lydia';
+const name = "Lydia";
 
 console.log(name.giveLydiaPizza());
 ```
@@ -877,8 +877,8 @@ console.log(name.giveLydiaPizza());
 
 ```javascript
 const a = {};
-const b = { key: 'b' };
-const c = { key: 'c' };
+const b = { key: "b" };
+const c = { key: "c" };
 
 a[b] = 123;
 a[c] = 456;
@@ -910,9 +910,9 @@ console.log(a[b]);
 ###### 30. এটার আউটপুট কোনটা?
 
 ```javascript
-const foo = () => console.log('First');
-const bar = () => setTimeout(() => console.log('Second'));
-const baz = () => console.log('Third');
+const foo = () => console.log("First");
+const bar = () => setTimeout(() => console.log("Second"));
+const baz = () => console.log("Third");
 
 bar();
 foo();
@@ -1018,7 +1018,7 @@ If we click `p`, we see two logs: `p` and `div`. During event propagation, there
 ###### 33. এটার আউটপুট কোনটা?
 
 ```javascript
-const person = { name: 'Lydia' };
+const person = { name: "Lydia" };
 
 function sayHi(age) {
   return `${this.name} is ${age}`;
@@ -1081,8 +1081,8 @@ console.log(typeof sayHi());
 ```javascript
 0;
 new Number(0);
-('');
-(' ');
+("");
+(" ");
 new Boolean(false);
 undefined;
 ```
@@ -1265,7 +1265,7 @@ console.log(numbers);
 
 ```javascript
 !!null;
-!!'';
+!!"";
 !!1;
 ```
 
@@ -1295,7 +1295,7 @@ console.log(numbers);
 ###### 42. এই `setInterval` মেথডটি ব্রাউজারে কি রিটার্ন করে?
 
 ```javascript
-setInterval(() => console.log('Hi'), 1000);
+setInterval(() => console.log("Hi"), 1000);
 ```
 
 - A: a unique id
@@ -1318,7 +1318,7 @@ setInterval(() => console.log('Hi'), 1000);
 ###### 43. এটা কি রিটার্ন করে?
 
 ```javascript
-[...'Lydia'];
+[..."Lydia"];
 ```
 
 - A: `["L", "y", "d", "i", "a"]`
@@ -1377,11 +1377,11 @@ console.log(gen.next().value);
 
 ```javascript
 const firstPromise = new Promise((res, rej) => {
-  setTimeout(res, 500, 'one');
+  setTimeout(res, 500, "one");
 });
 
 const secondPromise = new Promise((res, rej) => {
-  setTimeout(res, 100, 'two');
+  setTimeout(res, 100, "two");
 });
 
 Promise.race([firstPromise, secondPromise]).then((res) => console.log(res));
@@ -1407,7 +1407,7 @@ Promise.race([firstPromise, secondPromise]).then((res) => console.log(res));
 ###### 46. এটার আউটপুট কোনটা?
 
 ```javascript
-let person = { name: 'Lydia' };
+let person = { name: "Lydia" };
 const members = [person];
 person = null;
 
@@ -1447,7 +1447,7 @@ console.log(members);
 
 ```javascript
 const person = {
-  name: 'Lydia',
+  name: "Lydia",
   age: 21,
 };
 
@@ -1476,7 +1476,7 @@ for (const item in person) {
 ###### 48. এটার আউটপুট কোনটা?
 
 ```javascript
-console.log(3 + 4 + '5');
+console.log(3 + 4 + "5");
 ```
 
 - A: `"345"`
@@ -1503,7 +1503,7 @@ console.log(3 + 4 + '5');
 ###### 49. `num` এর ভ্যালু কোনটি?
 
 ```javascript
-const num = parseInt('7*6', 10);
+const num = parseInt("7*6", 10);
 ```
 
 - A: `42`
@@ -1529,7 +1529,7 @@ const num = parseInt('7*6', 10);
 
 ```javascript
 [1, 2, 3].map((num) => {
-  if (typeof num === 'number') return;
+  if (typeof num === "number") return;
   return num * 2;
 });
 ```
@@ -1557,12 +1557,12 @@ const num = parseInt('7*6', 10);
 
 ```javascript
 function getInfo(member, year) {
-  member.name = 'Lydia';
-  year = '1998';
+  member.name = "Lydia";
+  year = "1998";
 }
 
-const person = { name: 'Sarah' };
-const birthYear = '1997';
+const person = { name: "Sarah" };
+const birthYear = "1997";
 
 getInfo(person, birthYear);
 
@@ -1594,15 +1594,15 @@ console.log(person, birthYear);
 
 ```javascript
 function greeting() {
-  throw 'Hello world!';
+  throw "Hello world!";
 }
 
 function sayHi() {
   try {
     const data = greeting();
-    console.log('It worked!', data);
+    console.log("It worked!", data);
   } catch (e) {
-    console.log('Oh no an error:', e);
+    console.log("Oh no an error:", e);
   }
 }
 
@@ -1632,8 +1632,8 @@ sayHi();
 
 ```javascript
 function Car() {
-  this.make = 'Lamborghini';
-  return { make: 'Maserati' };
+  this.make = "Lamborghini";
+  return { make: "Maserati" };
 }
 
 const myCar = new Car();
@@ -1711,7 +1711,7 @@ Dog.prototype.bark = function () {
   console.log(`Woof I am ${this.name}`);
 };
 
-const pet = new Dog('Mara');
+const pet = new Dog("Mara");
 
 pet.bark();
 
@@ -1776,7 +1776,7 @@ export default counter;
 
 ```javascript
 // index.js
-import myCounter from './counter';
+import myCounter from "./counter";
 
 myCounter += 1;
 
@@ -1805,7 +1805,7 @@ console.log(myCounter);
 ###### 58. এটার আউটপুট কোনটা?
 
 ```javascript
-const name = 'Lydia';
+const name = "Lydia";
 age = 21;
 
 console.log(delete name);
@@ -1876,7 +1876,7 @@ console.log(y);
 ###### 60. এটার আউটপুট কোনটা?
 
 ```javascript
-const user = { name: 'Lydia', age: 21 };
+const user = { name: "Lydia", age: 21 };
 const admin = { admin: true, ...user };
 
 console.log(admin);
@@ -1902,9 +1902,9 @@ console.log(admin);
 ###### 61. এটার আউটপুট কোনটা?
 
 ```javascript
-const person = { name: 'Lydia' };
+const person = { name: "Lydia" };
 
-Object.defineProperty(person, 'age', { value: 21 });
+Object.defineProperty(person, "age", { value: 21 });
 
 console.log(person);
 console.log(Object.keys(person));
@@ -1933,12 +1933,12 @@ console.log(Object.keys(person));
 
 ```javascript
 const settings = {
-  username: 'lydiahallie',
+  username: "lydiahallie",
   level: 19,
   health: 90,
 };
 
-const data = JSON.stringify(settings, ['level', 'health']);
+const data = JSON.stringify(settings, ["level", "health"]);
 console.log(data);
 ```
 
@@ -2126,12 +2126,12 @@ class Labrador extends Dog {
 
 ```javascript
 // index.js
-console.log('running index.js');
-import { sum } from './sum.js';
+console.log("running index.js");
+import { sum } from "./sum.js";
 console.log(sum(1, 2));
 
 // sum.js
-console.log('running sum.js');
+console.log("running sum.js");
 export const sum = (a, b) => a + b;
 ```
 
@@ -2159,7 +2159,7 @@ export const sum = (a, b) => a + b;
 ```javascript
 console.log(Number(2) === Number(2));
 console.log(Boolean(false) === Boolean(false));
-console.log(Symbol('foo') === Symbol('foo'));
+console.log(Symbol("foo") === Symbol("foo"));
 ```
 
 - A: `true`, `true`, `false`
@@ -2182,7 +2182,7 @@ console.log(Symbol('foo') === Symbol('foo'));
 ###### 69. এটার আউটপুট কোনটা?
 
 ```javascript
-const name = 'Lydia Hallie';
+const name = "Lydia Hallie";
 console.log(name.padStart(13));
 console.log(name.padStart(2));
 ```
@@ -2209,7 +2209,7 @@ console.log(name.padStart(2));
 ###### 70. এটার আউটপুট কোনটা?
 
 ```javascript
-console.log('🥑' + '💻');
+console.log("🥑" + "💻");
 ```
 
 - A: `"🥑💻"`
@@ -2233,11 +2233,11 @@ console.log('🥑' + '💻');
 
 ```javascript
 function* startGame() {
-  const answer = yield 'Do you love JavaScript?';
-  if (answer !== 'Yes') {
+  const answer = yield "Do you love JavaScript?";
+  if (answer !== "Yes") {
     return "Oh wow... Guess we're done here";
   }
-  return 'JavaScript loves you back ❤️';
+  return "JavaScript loves you back ❤️";
 }
 
 const game = startGame();
@@ -2305,7 +2305,7 @@ console.log(String.raw`Hello\nworld`);
 
 ```javascript
 async function getData() {
-  return await Promise.resolve('I made it!');
+  return await Promise.resolve("I made it!");
 }
 
 const data = getData();
@@ -2342,7 +2342,7 @@ function addToList(item, list) {
   return list.push(item);
 }
 
-const result = addToList('apple', ['banana']);
+const result = addToList("apple", ["banana"]);
 console.log(result);
 ```
 
@@ -2402,7 +2402,7 @@ console.log(shape);
 ###### 76. এটার আউটপুট কোনটা?
 
 ```javascript
-const { firstName: myName } = { firstName: 'Lydia' };
+const { firstName: myName } = { firstName: "Lydia" };
 
 console.log(firstName);
 ```
@@ -2420,7 +2420,7 @@ console.log(firstName);
 [ডিস্ট্রাকচারিং অ্যাসাইনমেন্ট](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) সিনট্যাক্স ব্যবহার করে, আমরা অ্যারের ভ্যালু, বা অবজেক্টের প্রোপার্টি বের করে আলাদা ভ্যারিয়েবলে রাখতে পারিঃ
 
 ```javascript
-const { firstName } = { firstName: 'Lydia' };
+const { firstName } = { firstName: "Lydia" };
 // ES5 version:
 // var firstName = { firstName: 'Lydia' }.firstName;
 
@@ -2430,7 +2430,7 @@ console.log(firstName); // "Lydia"
 আবার, অবজেক্ট থেকে প্রোপার্টি বের করে অবজেক্টের ঐ প্রোপার্টির নামে না রেখে অন্য নামের ভ্যারিয়েবলেও রাখতে পারিঃ
 
 ```javascript
-const { firstName: myName } = { firstName: 'Lydia' };
+const { firstName: myName } = { firstName: "Lydia" };
 // ES5 version:
 // var myName = { firstName: 'Lydia' }.firstName;
 
@@ -2443,7 +2443,7 @@ console.log(firstName); // Uncaught ReferenceError: firstName is not defined
 **দ্রষ্টব্য:** `গ্লোবাল স্কোপ` বৈশিষ্ট্য সম্পর্কে সচেতন থাকুন:
 
 ```javascript
-const { name: myName } = { name: 'Lydia' };
+const { name: myName } = { name: "Lydia" };
 
 console.log(myName); // "lydia"
 console.log(name); // "" ----- Browser e.g. Chrome
@@ -2538,7 +2538,7 @@ console.log(addFunction(5 * 2));
 ###### 79. এটার আউটপুট কোনটা?
 
 ```javascript
-const myLifeSummedUp = ['☕', '💻', '🍷', '🍫'];
+const myLifeSummedUp = ["☕", "💻", "🍷", "🍫"];
 
 for (let item in myLifeSummedUp) {
   console.log(item);
@@ -2634,13 +2634,13 @@ console.log(sayHi());
 ###### 82. এটার আউটপুট কোনটা?
 
 ```javascript
-var status = '😎';
+var status = "😎";
 
 setTimeout(() => {
-  const status = '😍';
+  const status = "😍";
 
   const data = {
-    status: '🥑',
+    status: "🥑",
     getStatus() {
       return this.status;
     },
@@ -2674,12 +2674,12 @@ setTimeout(() => {
 
 ```javascript
 const person = {
-  name: 'Lydia',
+  name: "Lydia",
   age: 21,
 };
 
 let city = person.city;
-city = 'Amsterdam';
+city = "Amsterdam";
 
 console.log(person);
 ```
@@ -2743,7 +2743,7 @@ console.log(checkAge(21));
 ###### 85. এখানে কি ধরনের তথ্য লগ হতে পারে?
 
 ```javascript
-fetch('https://www.website.com/api/user/1')
+fetch("https://www.website.com/api/user/1")
   .then((res) => res.json())
   .then((res) => console.log(res));
 ```
@@ -2799,7 +2799,7 @@ D-র ক্ষেত্রে, `name.length` রিটার্ন করে �
 ###### 87. এটার আউটপুট কোনটা?
 
 ```javascript
-console.log('I want pizza'[0]);
+console.log("I want pizza"[0]);
 ```
 
 - A: `"""`
@@ -2854,11 +2854,11 @@ sum(10);
 
 ```javascript
 // module.js
-export default () => 'Hello world';
-export const name = 'Lydia';
+export default () => "Hello world";
+export const name = "Lydia";
 
 // index.js
-import * as data from './module';
+import * as data from "./module";
 
 console.log(data);
 ```
@@ -2891,7 +2891,7 @@ class Person {
   }
 }
 
-const member = new Person('John');
+const member = new Person("John");
 console.log(typeof member);
 ```
 
@@ -2951,11 +2951,10 @@ console.log(newList.push(5));
 
 ```javascript
 function giveLydiaPizza() {
-  return 'Here is pizza!';
+  return "Here is pizza!";
 }
 
-const giveLydiaChocolate = () =>
-  "Here's chocolate... now go hit the gym already.";
+const giveLydiaChocolate = () => "Here's chocolate... now go hit the gym already.";
 
 console.log(giveLydiaPizza.prototype);
 console.log(giveLydiaChocolate.prototype);
@@ -2982,7 +2981,7 @@ console.log(giveLydiaChocolate.prototype);
 
 ```javascript
 const person = {
-  name: 'Lydia',
+  name: "Lydia",
   age: 21,
 };
 
@@ -3043,7 +3042,7 @@ function getItems(fruitList, favoriteFruit, ...args) {
   return [...fruitList, ...args, favoriteFruit];
 }
 
-getItems(['banana', 'apple'], 'pear', 'orange');
+getItems(["banana", "apple"], "pear", "orange");
 ```
 
 উপরের উদাহরণটি সঠিকভাবে কাজ করে। এটি অ্যারে `[ 'banana', 'apple', 'orange', 'pear' ]` রিটার্ন করে দেয়।
@@ -3057,8 +3056,8 @@ getItems(['banana', 'apple'], 'pear', 'orange');
 
 ```javascript
 function nums(a, b) {
-  if (a > b) console.log('a is bigger');
-  else console.log('b is bigger');
+  if (a > b) console.log("a is bigger");
+  else console.log("b is bigger");
   return;
   a + b;
 }
@@ -3098,13 +3097,13 @@ a + b;
 ```javascript
 class Person {
   constructor() {
-    this.name = 'Lydia';
+    this.name = "Lydia";
   }
 }
 
 Person = class AnotherPerson {
   constructor() {
-    this.name = 'Sarah';
+    this.name = "Sarah";
   }
 };
 
@@ -3133,7 +3132,7 @@ console.log(member.name);
 
 ```javascript
 const info = {
-  [Symbol('a')]: 'b',
+  [Symbol("a")]: "b",
 };
 
 console.log(info);
@@ -3202,7 +3201,7 @@ console.log(getUser(user))
 ###### 99. এটার আউটপুট কোনটা?
 
 ```javascript
-const name = 'Lydia';
+const name = "Lydia";
 
 console.log(name());
 ```
@@ -3235,8 +3234,8 @@ console.log(name());
 ```javascript
 // 🎉✨ This is my 100th question! ✨🎉
 
-const output = `${[] && 'Im'}possible!
-You should${'' && `n't`} see a therapist after so much JavaScript lol`;
+const output = `${[] && "Im"}possible!
+You should${"" && `n't`} see a therapist after so much JavaScript lol`;
 ```
 
 - A: `possible! You should see a therapist after so much JavaScript lol`
@@ -3262,7 +3261,7 @@ You should${'' && `n't`} see a therapist after so much JavaScript lol`;
 
 ```javascript
 const one = false || {} || null;
-const two = null || false || '';
+const two = null || false || "";
 const three = [] || 0 || true;
 
 console.log(one, two, three);
@@ -3294,16 +3293,16 @@ console.log(one, two, three);
 ###### 102. এটার আউটপুটের ভ্যালু কি?
 
 ```javascript
-const myPromise = () => Promise.resolve('I have resolved!');
+const myPromise = () => Promise.resolve("I have resolved!");
 
 function firstFunction() {
   myPromise().then((res) => console.log(res));
-  console.log('second');
+  console.log("second");
 }
 
 async function secondFunction() {
   console.log(await myPromise());
-  console.log('second');
+  console.log("second");
 }
 
 firstFunction();
@@ -3341,8 +3340,8 @@ secondFunction();
 const set = new Set();
 
 set.add(1);
-set.add('Lydia');
-set.add({ name: 'Lydia' });
+set.add("Lydia");
+set.add({ name: "Lydia" });
 
 for (let item of set) {
   console.log(item + 2);
@@ -3402,13 +3401,13 @@ Promise.resolve(5);
 ```javascript
 function compareMembers(person1, person2 = person) {
   if (person1 !== person2) {
-    console.log('Not the same!');
+    console.log("Not the same!");
   } else {
-    console.log('They are the same!');
+    console.log("They are the same!");
   }
 }
 
-const person = { name: 'Lydia' };
+const person = { name: "Lydia" };
 
 compareMembers(person);
 ```
@@ -3445,7 +3444,7 @@ const colorConfig = {
   yellow: false,
 };
 
-const colors = ['pink', 'red', 'blue'];
+const colors = ["pink", "red", "blue"];
 
 console.log(colorConfig.colors[1]);
 ```
@@ -3474,7 +3473,7 @@ console.log(colorConfig.colors[1]);
 ###### 107. এটার ভ্যালুটি কি হবে?
 
 ```javascript
-console.log('❤️' === '❤️');
+console.log("❤️" === "❤️");
 ```
 
 - A: `true`
@@ -3495,14 +3494,14 @@ console.log('❤️' === '❤️');
 ###### 108. এই মেথডগুলির মধ্যে কোনটি মূল অ্যারে পরিবর্তন করে?
 
 ```javascript
-const emojis = ['✨', '🥑', '😍'];
+const emojis = ["✨", "🥑", "😍"];
 
-emojis.map((x) => x + '✨');
-emojis.filter((x) => x !== '🥑');
-emojis.find((x) => x !== '🥑');
-emojis.reduce((acc, cur) => acc + '✨');
-emojis.slice(1, 2, '✨');
-emojis.splice(1, 2, '✨');
+emojis.map((x) => x + "✨");
+emojis.filter((x) => x !== "🥑");
+emojis.find((x) => x !== "🥑");
+emojis.reduce((acc, cur) => acc + "✨");
+emojis.slice(1, 2, "✨");
+emojis.splice(1, 2, "✨");
 ```
 
 - A: `All of them`
@@ -3527,10 +3526,10 @@ emojis.splice(1, 2, '✨');
 ###### 109. এটার আউটপুট কোনটা?
 
 ```javascript
-const food = ['🍕', '🍫', '🥑', '🍔'];
+const food = ["🍕", "🍫", "🥑", "🍔"];
 const info = { favoriteFood: food[0] };
 
-info.favoriteFood = '🍝';
+info.favoriteFood = "🍝";
 
 console.log(food);
 ```
@@ -3584,7 +3583,7 @@ const jsonArray = JSON.stringify([1, 2, 3]); // '[1, 2, 3]'
 JSON.parse(jsonArray); // [1, 2, 3]
 
 // Stringifying an object into valid JSON, then parsing the JSON string to a JavaScript value:
-const jsonObject = JSON.stringify({ name: 'Lydia' }); // '{"name":"Lydia"}'
+const jsonObject = JSON.stringify({ name: "Lydia" }); // '{"name":"Lydia"}'
 JSON.parse(jsonObject); // { name: 'Lydia' }
 ```
 
@@ -3596,11 +3595,11 @@ JSON.parse(jsonObject); // { name: 'Lydia' }
 ###### 111. এটার আউটপুট কোনটা?
 
 ```javascript
-let name = 'Lydia';
+let name = "Lydia";
 
 function getName() {
   console.log(name);
-  let name = 'Sarah';
+  let name = "Sarah";
 }
 
 getName();
@@ -3623,7 +3622,7 @@ getName();
 যদি `name` ভ্যারিয়েবলটিকে আমরা `getName` ফাংশনে ডিক্লেয়ার না করতাম, জাভাস্ক্রিপ্ট ইঞ্জিন তাকে _scope chain_ এর ভিতর খুঁজে দেখত। বাইরের স্কোপেও একটি `name` ভ্যারিয়াবল আছে যার ভ্যালু একটি স্ট্রিং - `Lydia`। এক্ষেত্রে, এটা লগ করত `Lydia`।
 
 ```javascript
-let name = 'Lydia';
+let name = "Lydia";
 
 function getName() {
   console.log(name);
@@ -3641,11 +3640,11 @@ getName(); // Lydia
 
 ```javascript
 function* generatorOne() {
-  yield ['a', 'b', 'c'];
+  yield ["a", "b", "c"];
 }
 
 function* generatorTwo() {
-  yield* ['a', 'b', 'c'];
+  yield* ["a", "b", "c"];
 }
 
 const one = generatorOne();
@@ -3692,7 +3691,7 @@ console.log(two.next().value); // undefined
 ###### 113. এটার আউটপুট কোনটা?
 
 ```javascript
-console.log(`${((x) => x)('I love')} to program`);
+console.log(`${((x) => x)("I love")} to program`);
 ```
 
 - A: `I love to program`
@@ -3717,7 +3716,7 @@ console.log(`${((x) => x)('I love')} to program`);
 ```javascript
 let config = {
   alert: setInterval(() => {
-    console.log('Alert!');
+    console.log("Alert!");
   }, 1000),
 };
 
@@ -3747,16 +3746,16 @@ config = null;
 
 ```javascript
 const myMap = new Map();
-const myFunc = () => 'greeting';
+const myFunc = () => "greeting";
 
-myMap.set(myFunc, 'Hello world!');
+myMap.set(myFunc, "Hello world!");
 
 //1
-myMap.get('greeting');
+myMap.get("greeting");
 //2
 myMap.get(myFunc);
 //3
-myMap.get(() => 'greeting');
+myMap.get(() => "greeting");
 ```
 
 - A: 1
@@ -3783,14 +3782,14 @@ myMap.get(() => 'greeting');
 
 ```javascript
 const person = {
-  name: 'Lydia',
+  name: "Lydia",
   age: 21,
 };
 
 const changeAge = (x = { ...person }) => (x.age += 1);
 const changeAgeAndName = (x = { ...person }) => {
   x.age += 1;
-  x.name = 'Sarah';
+  x.name = "Sarah";
 };
 
 changeAge(person);
@@ -3849,7 +3848,7 @@ function sumValues(x, y, z) {
 
 ```javascript
 let num = 1;
-const list = ['🥳', '🤠', '🥰', '🤪'];
+const list = ["🥳", "🤠", "🥰", "🤪"];
 
 console.log(list[(num += 1)]);
 ```
@@ -3875,11 +3874,11 @@ console.log(list[(num += 1)]);
 
 ```javascript
 const person = {
-  firstName: 'Lydia',
-  lastName: 'Hallie',
+  firstName: "Lydia",
+  lastName: "Hallie",
   pet: {
-    name: 'Mara',
-    breed: 'Dutch Tulip Hound',
+    name: "Mara",
+    breed: "Dutch Tulip Hound",
   },
   getFullName() {
     return `${this.firstName} ${this.lastName}`;
@@ -3920,10 +3919,10 @@ console.log(member.getLastName?.());
 ###### 120. এটার আউটপুট কোনটা?
 
 ```javascript
-const groceries = ['banana', 'apple', 'peanuts'];
+const groceries = ["banana", "apple", "peanuts"];
 
-if (groceries.indexOf('banana')) {
-  console.log('We have to buy bananas!');
+if (groceries.indexOf("banana")) {
+  console.log("We have to buy bananas!");
 } else {
   console.log(`We don't have to buy bananas!`);
 }
@@ -3979,10 +3978,10 @@ console.log(config.language);
 ###### 122. এটার আউটপুট কোনটা?
 
 ```javascript
-const name = 'Lydia Hallie';
+const name = "Lydia Hallie";
 
-console.log(!typeof name === 'object');
-console.log(!typeof name === 'string');
+console.log(!typeof name === "object");
+console.log(!typeof name === "string");
 ```
 
 - A: `false` `true`
@@ -4025,7 +4024,10 @@ add(4)(5)(6);
 
 #### উত্তর: A
 
-The `add` function returns an arrow function, which returns an arrow function, which returns an arrow function (still with me?). The first function receives an argument `x` with the value of `4`. We invoke the second function, which receives an argument `y` with the value `5`. Then we invoke the third function, which receives an argument `z` with the value `6`. When we're trying to access the value `x`, `y` and `z` within the last arrow function, the JS engine goes up the scope chain in order to find the values for `x` and `y` accordingly. This returns `4` `5` `6`.
+`add` ফাংশনটি একটি অ্যারো ফাংশন রিটার্ন করে (একে বলা হয় curried function), যেটা একটি অ্যারো ফাংশন রিটার্ন করে, যেটা একটি অ্যারো ফাংশন রিটার্ন করে (মাথা খারাপ হচ্ছে নাতো 🤯)। ১ম ফাংশন একটি আর্গুমেন্ট রিসিভ করে `x` যার ভ্যালু হলো `4`। আমরা ২য় ফাংশনটি কল করি, যেটা একটি আর্গুমেন্ট রিসিভ করে `y` যার ভ্যালু হলো `5`। এরপর আমরা ৩য় ফাংশনটি কল করি, যেটা একটি আর্গুমেন্ট রিসিভ করে `z` যার ভ্যালু হলো `6`। আমরা যখন শেষ অ্যারো ফাংশনে `x`, `y` ও `z` ভ্যালুকে এক্সেস করার চেষ্টা করছি, জাভাস্ক্রিপ্ট ইঞ্জিন `x` ও `y` এর ভ্যালুগুলোর জন্য তাদের অবস্থান অনুসারে স্কোপ চেইনের উপরে যাচ্ছে। লগ করছে `4` `5` `6` এবং রিটার্ন করছে `15`।
+
+> - ক্যারি ফাংশন (curried functions) ক্লোজার ([closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)) এর মাধ্যমে একাধিক ফাংশন কলের মধ্যে স্টেট মেইন্টেইন করে। প্রতিটি রিটার্ন হওয়া ফাংশন তার স্কোপ ভ্যারিয়েবলের ভ্যালুকে মনে রাখে।
+> - যখন আপনি `add(4)(5)(6)` কল করছেন, ইনার ফাংশনগুলোতে `x` ও `y` এর ভ্যালু যথাক্রমে, `4` ও `5` এর এক্সেস এখনো থাকছে, যদিও তারা ভিন্ন কনট্যাক্সে চলে।
 
 </p>
 </details>
@@ -4059,7 +4061,7 @@ async function* range(start, end) {
 
 #### উত্তর: C
 
-The generator function `range` returns an async object with promises for each item in the range we pass: `Promise{1}`, `Promise{2}`, `Promise{3}`. We set the variable `gen` equal to the async object, after which we loop over it using a `for await ... of` loop. We set the variable `item` equal to the returned Promise values: first `Promise{1}`, then `Promise{2}`, then `Promise{3}`. Since we're _awaiting_ the value of `item`, the resolved promise, the resolved _values_ of the promises get returned: `1`, `2`, then `3`.
+আমরা যে রেঞ্জটি পাস করছি তাদের প্রতিটির জন্য জেনারেটর ফাংশন `range` প্রমিসসহ একটি এসিঙ্ক অবজেক্ট রিটার্ন করেঃ `Promise{1}`, `Promise{2}`, `Promise{3}`। `gen` ভ্যারিয়েবল সমান সেট করছি এই এসিঙ্ক অবজেক্টিকে, পরবর্তিতে যেটার উপর আমরা `for await ... of` লুপ চালাচ্ছি। এখানে `item` ভ্যারিয়েবল সমান সেট করছি রিটার্ন করা প্রমিস ভ্যালুগুলোকেঃ ১মে `Promise{1}`, পরবর্তিতে `Promise{2}`, পরবর্তিতে `Promise{3}`। যেহেতু আমরা `item` ভ্যারিয়েবলের জন্য _awaiting_ করছি, তাই প্রমিসের রিসল্ভড _ভ্যালুগুলোই_ রিটার্ন হচ্ছেঃ `1`, `2`, ও `3`।
 
 </p>
 </details>
@@ -4086,7 +4088,7 @@ myFunc(1, 2, 3);
 
 #### উত্তর: D
 
-`myFunc` expects an object with properties `x`, `y` and `z` as its argument. Since we're only passing three separate numeric values (1, 2, 3) instead of one object with properties `x`, `y` and `z` ({x: 1, y: 2, z: 3}), `x`, `y` and `z` have their default value of `undefined`.
+`myFunc` ফাংশনটি আর্গুমেন্টে আশা করছে একটি অবজেক্ট যার `x`, `y` ও `z` প্রোপার্টিগুলো আছে। যেহেতু আমরা একটি `x`, `y` ও `z` প্রোপার্টিসহ একটি অবজেক্টের পরিবর্তে ({x: 1, y: 2, z: 3}) আলাদা আলদা সংখ্যাসুচক ভ্যালু (1, 2, 3) পাস করছি, `x`, `y` ও `z`এর ভ্যালুগুলো তাদের ডিফল্ট ভ্যালু `undefined`-ই থাকছে।q
 
 </p>
 </details>
@@ -4097,14 +4099,14 @@ myFunc(1, 2, 3);
 
 ```javascript
 function getFine(speed, amount) {
-  const formattedSpeed = new Intl.NumberFormat('en-US', {
-    style: 'unit',
-    unit: 'mile-per-hour',
+  const formattedSpeed = new Intl.NumberFormat("en-US", {
+    style: "unit",
+    unit: "mile-per-hour",
   }).format(speed);
 
-  const formattedAmount = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
+  const formattedAmount = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
   }).format(amount);
 
   return `The driver drove ${formattedSpeed} and has to pay ${formattedAmount}`;
@@ -4123,7 +4125,7 @@ console.log(getFine(130, 300));
 
 #### উত্তর: B
 
-With the `Intl.NumberFormat` method, we can format numeric values to any locale. We format the numeric value `130` to the `en-US` locale as a `unit` in `mile-per-hour`, which results in `130 mph`. The numeric value `300` to the `en-US` locale as a `currency` in `USD` results in `$300.00`.
+`Intl.NumberFormat` মেথড ব্যাবহার করে সংখ্যাসুচক ভ্যালুকে কোন একটি লোকালে ফরম্যাট করতে পারি। আমরা সংখ্যাসুচক ভ্যালু `130` কে `unit` হিসেবে `mile-per-hour` দিয়ে `en-US` লোকালে ফরম্যাট করেছি, যেটা ফলাফল দিয়েছে `130 mph`। একইভাবে সংখ্যাসুচক ভ্যালু `300` কে `currency` হিসেবে `USD` দিয়ে `en-US` লোকালে ফরম্যাট করেছি যেটার ফলাফল হয় `$300.00`।
 
 </p>
 </details>
@@ -4133,8 +4135,8 @@ With the `Intl.NumberFormat` method, we can format numeric values to any locale.
 ###### 127. এটার আউটপুট কোনটা?
 
 ```javascript
-const spookyItems = ['👻', '🎃', '🕸'];
-({ item: spookyItems[3] } = { item: '💀' });
+const spookyItems = ["👻", "🎃", "🕸"];
+({ item: spookyItems[3] } = { item: "💀" });
 
 console.log(spookyItems);
 ```
@@ -4149,7 +4151,7 @@ console.log(spookyItems);
 
 #### উত্তর: B
 
-By destructuring objects, we can unpack values from the right-hand object, and assign the unpacked value to the value of the same property name on the left-hand object. In this case, we're assigning the value "💀" to `spookyItems[3]`. This means that we're modifying the `spookyItems` array, we're adding the "💀" to it. When logging `spookyItems`, `["👻", "🎃", "🕸", "💀"]` gets logged.
+অবজেক্ট ডিস্ট্রাকচারিং ([ডিস্ট্রাকচারিং অ্যাসাইনমেন্ট](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)) এর মাধ্যমে, ডানপক্ষের অবজেক্টের ভ্যালুগুলোকে বের করে বামপক্ষের অবজেক্টের একই নামের প্রোপার্টির ভ্যালু দিয়ে অ্যাসাইন করতে পারি। এক্ষেত্রে, আমরা "💀" ভ্যালুটিকে `spookyItems[3]`-তে অ্যাসাইন করছি। এর মানে হলো, "💀" ভ্যালুটিকে যুক্ত করে আমরা `spookyItems` অ্যারেকে পরিবর্তন করেছি। তাই `spookyItems` কে লগ করায় `["👻", "🎃", "🕸", "💀"]` লগ হয়েছে।
 
 </p>
 </details>
@@ -4159,7 +4161,7 @@ By destructuring objects, we can unpack values from the right-hand object, and a
 ###### 128. এটার আউটপুট কোনটা?
 
 ```javascript
-const name = 'Lydia Hallie';
+const name = "Lydia Hallie";
 const age = 21;
 
 console.log(Number.isNaN(name));
@@ -4179,9 +4181,9 @@ console.log(isNaN(age));
 
 #### উত্তর: C
 
-With the `Number.isNaN` method, you can check if the value you pass is a _numeric value_ and equal to `NaN`. `name` is not a numeric value, so `Number.isNaN(name)` returns `false`. `age` is a numeric value, but is not equal to `NaN`, so `Number.isNaN(age)` returns `false`.
+`Number.isNaN` মেথডের মাধ্যমে, আপনি চেক করতে পারেন যে ভ্যালুটি আপনি পাস করছেন সেটা _সংখ্যাসুচক ভ্যালু_ এবং _`NaN`_ এর সমান হচ্ছে কিনা। `name` সংখ্যাসুচক ভ্যালু নয়, তাই `Number.isNaN(name)` রিটার্ন করছে `false`। `age` সংখ্যাসুচক ভ্যালু কিন্তু `NaN` এর সমান নয়, তাই `Number.isNaN(age)` রিটার্ন করছে `false`।
 
-With the `isNaN` method, you can check if the value you pass is not a number. `name` is not a number, so `isNaN(name)` returns true. `age` is a number, so `isNaN(age)` returns `false`.
+অন্যদিকে `isNaN` মেথডের মাধ্যমে, আপনি কেবল চেক করতে পারেন যে ভ্যালুটি আপনি পাস করছেন সেটা কোন _সংখ্যা নয়_ কিনা। `name` কোন সংখ্যা নয়, তাই `isNaN(name)` রিটার্ন করছে `true`। `age` একটি সংখ্যা, তাই `isNaN(age)` রিটার্ন করছে `false`
 
 </p>
 </details>
@@ -4195,7 +4197,7 @@ const randomValue = 21;
 
 function getInfo() {
   console.log(typeof randomValue);
-  const randomValue = 'Lydia Hallie';
+  const randomValue = "Lydia Hallie";
 }
 
 getInfo();
@@ -4211,7 +4213,9 @@ getInfo();
 
 #### উত্তর: D
 
-Variables declared with the `const` keyword are not referenceable before their initialization: this is called the _temporal dead zone_. In the `getInfo` function, the variable `randomValue` is scoped in the functional scope of `getInfo`. On the line where we want to log the value of `typeof randomValue`, the variable `randomValue` isn't initialized yet: a `ReferenceError` gets thrown! The engine didn't go down the scope chain since we declared the variable `randomValue` in the `getInfo` function.
+`const` (ও `let`) কিওয়ার্ড দিয়ে ডিক্লেয়ার করা ভ্যারিয়েবলগুলো যে লাইনে ডিক্লেয়ার (ইনিশিয়ালাইজ) করা হয়েছে তার আগে এদেরকে এক্সেস (রিড/রাইট) বা রেফারেন্স করা যায় না। এটাকে **"টেম্পোরাল ডেড জোন"** বলা হয়। তাই ভেরিয়েবলকে ইনিশিয়ালাইজেশনের আগে এক্সেস করার চেষ্টা করা হলে জাভাস্ক্রিপ্ট `ReferenceError` দেয়।
+
+`getInfo` ফাংশনের `randomValue` ভেরিয়েবলটির স্কোপ হচ্ছে তার ফাংশনাল স্কোপ - `getInfo`। যে লাইনে আমরা `typeof randomValue` এর ভ্যালুকে লগ করছি, তখনো `randomValue` ইনিশিয়ালাইজ হয়নিঃ একটি `ReferenceError` হচ্ছে! জাভাস্ক্রিপ্ট ইঞ্জিন স্কোপ চেইনে খুঁজে দেখছে না যেহেতু আমরা `randomValue` ভেরিয়েবলটিকে `getInfo` ফাংশনেই ডিক্লেয়ার করেছি।
 
 </p>
 </details>
@@ -4221,7 +4225,7 @@ Variables declared with the `const` keyword are not referenceable before their i
 ###### 130. এটার আউটপুট কোনটা?
 
 ```javascript
-const myPromise = Promise.resolve('Woah some cool data');
+const myPromise = Promise.resolve("Woah some cool data");
 
 (async () => {
   try {
@@ -4229,7 +4233,7 @@ const myPromise = Promise.resolve('Woah some cool data');
   } catch {
     throw new Error(`Oops didn't work`);
   } finally {
-    console.log('Oh finally!');
+    console.log("Oh finally!");
   }
 })();
 ```
@@ -4244,7 +4248,7 @@ const myPromise = Promise.resolve('Woah some cool data');
 
 #### উত্তর: C
 
-In the `try` block, we're logging the awaited value of the `myPromise` variable: `"Woah some cool data"`. Since no errors were thrown in the `try` block, the code in the `catch` block doesn't run. The code in the `finally` block _always_ runs, `"Oh finally!"` gets logged.
+`try` ব্লকে, আমরা `myPromise` ভেরিয়েবলের অপেক্ষিত ভ্যালুটি লগ করার চেষ্টা করছি: `"Woah some cool data"`। যেহেতু `try` ব্লকে কোনো এরর থ্রো হয়নি, `catch` ব্লকের কোড রান হয় না। `finally` ব্লকের কোড _সবসময়ই_ রান হয়, তাই `"Oh finally!"` লগ হয়।
 
 </p>
 </details>
@@ -4254,7 +4258,7 @@ In the `try` block, we're logging the awaited value of the `myPromise` variable:
 ###### 131. এটার আউটপুট কোনটা?
 
 ```javascript
-const emojis = ['🥑', ['✨', '✨', ['🍕', '🍕']]];
+const emojis = ["🥑", ["✨", "✨", ["🍕", "🍕"]]];
 
 console.log(emojis.flat(1));
 ```
@@ -4269,7 +4273,7 @@ console.log(emojis.flat(1));
 
 #### উত্তর: B
 
-With the `flat` method, we can create a new, flattened array. The depth of the flattened array depends on the value that we pass. In this case, we passed the value `1` (which we didn't have to, that's the default value), meaning that only the arrays on the first depth will be concatenated. `['🥑']` and `['✨', '✨', ['🍕', '🍕']]` in this case. Concatenating these two arrays results in `['🥑', '✨', '✨', ['🍕', '🍕']]`.
+`flat` পদ্ধতির সাহায্যে, আমরা একটি নতুন, সমতলকৃত অ্যারে তৈরি করতে পারি। সমতলকৃত অ্যারের গভীরতা নির্ভর করে যে মানটি আমরা পাস করি তার উপর। এই ক্ষেত্রে, আমরা মান `1` পাস করেছি (যা আমাদের পাস না করলেও হত, এটি ডিফল্ট মান), এর অর্থ হল কেবলমাত্র প্রথম স্তরের অ্যারেগুলি সংযুক্ত হবে। এই ক্ষেত্রে `['🥑']` এবং `['✨', '✨', ['🍕', '🍕']]`। এই দুটি অ্যারে সংযুক্ত করার ফলে `['🥑', '✨', '✨', ['🍕', '🍕']]` পাওয়া যায়।
 
 </p>
 </details>
@@ -4309,13 +4313,13 @@ console.log(counterOne.count);
 
 #### উত্তর: D
 
-`counterOne` is an instance of the `Counter` class. The counter class contains a `count` property on its constructor, and an `increment` method. First, we invoked the `increment` method twice by calling `counterOne.increment()`. Currently, `counterOne.count` is `2`.
+`counterOne` হল `Counter` ক্লাসের একটি ইনস্ট্যান্স। `Counter` ক্লাসের কনস্ট্রাক্টরে একটি `count` প্রপার্টি এবং একটি `increment` মেথড রয়েছে। প্রথমে, আমরা `counterOne.increment()` কল করে `increment` মেথড দু'বার কল করেছি। বর্তমানে, `counterOne.count` হল `2`।
 
 <img src="https://i.imgur.com/KxLlTm9.png" width="400">
 
-Then, we create a new variable `counterTwo`, and set it equal to `counterOne`. Since objects interact by reference, we're just creating a new reference to the same spot in memory that `counterOne` points to. Since it has the same spot in memory, any changes made to the object that `counterTwo` has a reference to, also apply to `counterOne`. Currently, `counterTwo.count` is `2`.
+তারপর, আমরা একটি নতুন ভেরিয়েবল `counterTwo` তৈরি করি এবং এটিকে `counterOne` এর সমান সেট করি। যেহেতু অবজেক্টগুলি রেফারেন্স দ্বারা ইন্টারঅ্যাক্ট করে, আমরা কেবল `counterOne` যে মেমরির লোকেশনে নির্দেশ করে তার একটি নতুন রেফারেন্স তৈরি করছি। যেহেতু এটি একই মেমরি লোকেশনে নির্দেশ করে, তাই `counterTwo` যেই অবজেক্টটির রেফারেন্স দেয় তাতে করা যেকোনো পরিবর্তন `counterOne` এর ক্ষেত্রেও প্রযোজ্য হবে। বর্তমানে, `counterTwo.count` হল `2`।
 
-We invoke `counterTwo.increment()`, which sets `count` to `3`. Then, we log the count on `counterOne`, which logs `3`.
+আমরা `counterTwo.increment()` কল করি, যা `count` কে সেট করে `3`। তারপর, আমরা `counterOne` এর `count` লগ করি, যা লগ করে `3`।
 
 <img src="https://i.imgur.com/BNBHXmc.png" width="400">
 
@@ -4327,19 +4331,19 @@ We invoke `counterTwo.increment()`, which sets `count` to `3`. Then, we log the 
 ###### 133. এটার আউটপুট কোনটা?
 
 ```javascript
-const myPromise = Promise.resolve(Promise.resolve('Promise'));
+const myPromise = Promise.resolve(Promise.resolve("Promise"));
 
 function funcOne() {
-  setTimeout(() => console.log('Timeout 1!'), 0);
+  setTimeout(() => console.log("Timeout 1!"), 0);
   myPromise.then((res) => res).then((res) => console.log(`${res} 1!`));
-  console.log('Last line 1!');
+  console.log("Last line 1!");
 }
 
 async function funcTwo() {
   const res = await myPromise;
   console.log(`${res} 2!`);
-  setTimeout(() => console.log('Timeout 2!'), 0);
-  console.log('Last line 2!');
+  setTimeout(() => console.log("Timeout 2!"), 0);
+  console.log("Last line 2!");
 }
 
 funcOne();
@@ -4356,19 +4360,19 @@ funcTwo();
 
 #### উত্তর: C
 
-First, we invoke `funcOne`. On the first line of `funcOne`, we call the _asynchronous_ `setTimeout` function, from which the callback is sent to the Web API. (see my article on the event loop <a href="https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif">here</a>.)
+প্রথমে, আমরা `funcOne` ফাংশন চালিয়েছি। `funcOne` এর ১ম লাইনে আমরা _অ্যাসিঙ্ক্রোনাস_ `setTimeout` ফাংশনটি কল করছি, যেখান থেকে কলব্যাকটি Web API এ পাঠানো হয়েছে। (ইভেন্ট লুপের আর্টিক্যালটি পড়ুন <a href="https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif">এখান থেকে</a>.)
 
-Then we call the `myPromise` promise, which is an _asynchronous_ operation. Pay attention, that now only the first then clause was added to the microtask queue.
+পরবর্তিতে আমরা `myPromise` প্রমিসটি কল করেছি যেটা _অ্যাসিঙ্ক্রোনাস_ অপারেশন। মনোযোগ দিন, এখন কেবল `.then()` চেইনের ১ম অংশটি মাইক্রোটাস্ক কিউতে যুক্ত হয়েছে।
 
-Both the promise and the timeout are asynchronous operations, the function keeps on running while it's busy completing the promise and handling the `setTimeout` callback. This means that `Last line 1!` gets logged first, since this is not an asynchonous operation.
+প্রমিস ও টাইম-আউট দুটোই _অ্যাসিঙ্ক্রোনাস_ অপারেশন, ফাংশনটি চলতেই থাকে যখন সে প্রমিস সমাধান এবং টাইম-আউট কলব্যাক হ্যান্ডেল করতে থাকে। এর মানে হলো `Last line 1!` লগ হচ্ছে প্রথমে, যেহেতু এটা কোন _অ্যাসিঙ্ক্রোনাস_ অপারেশন নয়।
 
-Since the callstack is not empty yet, the `setTimeout` function and promise in `funcOne` cannot get added to the callstack yet.
+যেহেতু কলস্ট্যাক এখনো খালি নয় তাই `funcOne` এর `setTimeout` ফাংশন ও `myPromise` প্রমিস তখনো কলস্ট্যাক এ আসতে পারে না।
 
-In `funcTwo`, the variable `res` gets `Promise` because `Promise.resolve(Promise.resolve('Promise'))` is equivalent to `Promise.resolve('Promise')` since resolving a promise just resolves it's value. The `await` in this line stops the execution of the function until it receives the resolution of the promise and then keeps on running synchronously until completion, so `Promise 2!` and then `Last line 2!` are logged and the `setTimeout` is sent to the Web API. If the first then clause in `funcOne` had its own log statement, it would be printed before `Promise 2!`. Howewer, it executed silently and put the second then clause in microtask queue. So, the second clause will be printed after `Promise 2!`.
+`funcTwo` এ, `res` ভয়ারেয়েবলটি একটি `Promise` পাচ্ছে কারন `Promise.resolve(Promise.resolve('Promise'))` এর সমমান হলো `Promise.resolve('Promise')` যেহেতু একটি প্রমিস সমাধান করা মানে হলো এর ভ্যালুটিকেই সমাধান করা। `await` এর জন্য এই লাইনে ফাংশনটির এক্সিকিউশন থেমে থাকবে যতক্ষণ পর্যন্ত না সে প্রমিস সমাধান ভ্যালু পাচ্ছে এবং সিঙ্ক্রনাসভাবে শেষ হওয়া পর্যন্ত চলতে থাকে, তাই `Promise 2!` ও এর পরে `Last line 2!` লগ হয় এবং `setTimeout` Web API কে পাঠানো হয়। যদি `funcOne` ফাংশনে `.then()` এর ১ম অংশ নিজের কোন লগ স্টেটমেন্ট থাকত, সেটা `Promise 2!` এর আগে প্রিন্ট হত। যাই হোক, এটা চুপচাপ এক্সিকিউট হয় এবং `.then()` এর ২য় অংশকে মাইক্রোটাস্ক কিউতে পাঠিয়ে দেয়। তাই, ২য় অংশটি `Promise 2!` এর পরেই প্রিন্ট হবে।
 
-Then the call stack is empty. Promises are _microtasks_ so they are resolved first when the call stack is empty so `Promise 1!` gets to be logged.
+পরের ধাপে, কল স্ট্যাক খালি। প্রমিসগুলো _মাইক্রোটাস্ক_ ফলে তাঁরা প্রথমে রিসলভ হবে যখন কল স্ট্যাক খালি থাকবে তাই `Promise 1!` লগ হয়েছে।
 
-Now, since `funcTwo` popped off the call stack, the call stack is empty. The callbacks waiting in the queue (`() => console.log("Timeout 1!")` from `funcOne`, and `() => console.log("Timeout 2!")` from `funcTwo`) get added to the call stack one by one. The first callback logs `Timeout 1!`, and gets popped off the stack. Then, the second callback logs `Timeout 2!`, and gets popped off the stack.
+এখন যেহতু `funcTwo` কল স্ট্যাক থেকে রেব হয়ে যায়, কল স্ট্যাক খালি থাকছে। কিউতে যে কলব্যাকগুলি অপেক্ষা করছে (`funcOne` এর - `() => console.log("Timeout 1!")` এবং `funcTwo` এর `() => console.log("Timeout 2!")`) তারা একের পর এক কল স্ট্যাক এ যুক্ত হয়। ১ম কলব্যাক লগ করে `Timeout 1!`, এবং কল স্ট্যাক থেকে রেব হয়ে যায়। এরপর, ২য় কলব্যাক লগ করে `Timeout 2!`, এবং কল স্ট্যাক থেকে রেব হয়ে যায়।
 
 </p>
 </details>
@@ -4384,7 +4388,7 @@ export default function sum(x) {
 }
 
 // index.js
-import * as sum from './sum';
+import * as sum from "./sum";
 ```
 
 - A: `sum(4)`
@@ -4401,12 +4405,12 @@ With the asterisk `*`, we import all exported values from that file, both defaul
 
 ```javascript
 // info.js
-export const name = 'Lydia';
+export const name = "Lydia";
 export const age = 21;
-export default 'I love JavaScript';
+export default "I love JavaScript";
 
 // index.js
-import * as info from './info';
+import * as info from "./info";
 console.log(info);
 ```
 
@@ -4437,13 +4441,13 @@ We can invoke this function, by calling `sum.default`
 
 ```javascript
 const handler = {
-  set: () => console.log('Added a new property!'),
-  get: () => console.log('Accessed a property!'),
+  set: () => console.log("Added a new property!"),
+  get: () => console.log("Accessed a property!"),
 };
 
 const person = new Proxy({}, handler);
 
-person.name = 'Lydia';
+person.name = "Lydia";
 person.name;
 ```
 
@@ -4473,7 +4477,7 @@ Then, we access a property value on the proxy object, and the `get` property on 
 ###### 136. Which of the following will modify the `person` object?
 
 ```javascript
-const person = { name: 'Lydia Hallie' };
+const person = { name: "Lydia Hallie" };
 
 Object.seal(person);
 ```
@@ -4501,9 +4505,9 @@ However, you can still modify the value of existing properties.
 
 ```javascript
 const person = {
-  name: 'Lydia Hallie',
+  name: "Lydia Hallie",
   address: {
-    street: '100 Main St',
+    street: "100 Main St",
   },
 };
 
@@ -4603,8 +4607,8 @@ In ES2020, we can add private variables in classes by using the `#`. We cannot a
 
 ```javascript
 const teams = [
-  { name: 'Team 1', members: ['Paul', 'Lisa'] },
-  { name: 'Team 2', members: ['Laura', 'Tim'] },
+  { name: "Team 1", members: ["Paul", "Lisa"] },
+  { name: "Team 2", members: ["Laura", "Tim"] },
 ];
 
 function* getMembers(members) {
@@ -4647,8 +4651,8 @@ If we would've written `yield`, `return yield`, or `return`, the entire generato
 
 ```javascript
 const person = {
-  name: 'Lydia Hallie',
-  hobbies: ['coding'],
+  name: "Lydia Hallie",
+  hobbies: ["coding"],
 };
 
 function addHobby(hobby, hobbies = person.hobbies) {
@@ -4656,9 +4660,9 @@ function addHobby(hobby, hobbies = person.hobbies) {
   return hobbies;
 }
 
-addHobby('running', []);
-addHobby('dancing');
-addHobby('baking', person.hobbies);
+addHobby("running", []);
+addHobby("dancing");
+addHobby("baking", person.hobbies);
 
 console.log(person.hobbies);
 ```
@@ -4727,11 +4731,11 @@ We create the variable `pet` which is an instance of the `Flamingo` class. When 
 ###### 143. Which of the options result(s) in an error?
 
 ```javascript
-const emojis = ['🎄', '🎅🏼', '🎁', '⭐'];
+const emojis = ["🎄", "🎅🏼", "🎁", "⭐"];
 
-/* 1 */ emojis.push('🦌');
+/* 1 */ emojis.push("🦌");
 /* 2 */ emojis.splice(0, 2);
-/* 3 */ emojis = [...emojis, '🥂'];
+/* 3 */ emojis = [...emojis, "🥂"];
 /* 4 */ emojis.length = 0;
 ```
 
@@ -4817,9 +4821,9 @@ function getFruit(fruits) {
   console.log(fruits?.[1]?.[1]);
 }
 
-getFruit([['🍊', '🍌'], ['🍍']]);
+getFruit([["🍊", "🍌"], ["🍍"]]);
 getFruit();
-getFruit([['🍍'], ['🍊', '🍌']]);
+getFruit([["🍍"], ["🍊", "🍌"]]);
 ```
 
 - A: `null`, `undefined`, 🍌
@@ -4885,8 +4889,8 @@ We set the variable `calc` equal to a new instance of the `Calc` class. Then, we
 
 ```javascript
 const user = {
-  email: 'e@mail.com',
-  password: '12345',
+  email: "e@mail.com",
+  password: "12345",
 };
 
 const updateUser = ({ email, password }) => {
@@ -4901,7 +4905,7 @@ const updateUser = ({ email, password }) => {
   return user;
 };
 
-const updatedUser = updateUser({ email: 'new@email.com' });
+const updatedUser = updateUser({ email: "new@email.com" });
 
 console.log(updatedUser === user);
 ```
@@ -4926,11 +4930,11 @@ The `updateUser` function updates the values of the `email` and `password` prope
 ###### 149. এটার আউটপুট কোনটা?
 
 ```javascript
-const fruit = ['🍌', '🍊', '🍎'];
+const fruit = ["🍌", "🍊", "🍎"];
 
 fruit.slice(0, 1);
 fruit.splice(0, 1);
-fruit.unshift('🍇');
+fruit.unshift("🍇");
 
 console.log(fruit);
 ```
@@ -4958,11 +4962,11 @@ At last, we invoke the `unshift` method on the `fruit` array, which modifies the
 
 ```javascript
 const animals = {};
-let dog = { emoji: '🐶' };
-let cat = { emoji: '🐈' };
+let dog = { emoji: "🐶" };
+let cat = { emoji: "🐈" };
 
-animals[dog] = { ...dog, name: 'Mara' };
-animals[cat] = { ...cat, name: 'Sara' };
+animals[dog] = { ...dog, name: "Mara" };
+animals[cat] = { ...cat, name: "Sara" };
 
 console.log(animals[dog]);
 ```
@@ -4994,13 +4998,13 @@ Logging `animals[dog]`, or actually `animals["[object Object]"]` since convertin
 
 ```javascript
 const user = {
-  email: 'my@email.com',
+  email: "my@email.com",
   updateEmail: (email) => {
     this.email = email;
   },
 };
 
-user.updateEmail('new@email.com');
+user.updateEmail("new@email.com");
 console.log(user.email);
 ```
 
@@ -5024,10 +5028,10 @@ The `updateEmail` function is an arrow function, and is not bound to the `user` 
 ###### 152. এটার আউটপুট কোনটা?
 
 ```javascript
-const promise1 = Promise.resolve('First');
-const promise2 = Promise.resolve('Second');
-const promise3 = Promise.reject('Third');
-const promise4 = Promise.resolve('Fourth');
+const promise1 = Promise.resolve("First");
+const promise2 = Promise.resolve("Second");
+const promise3 = Promise.reject("Third");
+const promise4 = Promise.resolve("Fourth");
 
 const runPromises = async () => {
   const res1 = await Promise.all([promise1, promise2]);
@@ -5060,8 +5064,8 @@ The `Promise.all` method runs the passed promises in parallel. If one promise fa
 ###### 153. What should the value of `method` be to log `{ name: "Lydia", age: 22 }`?
 
 ```javascript
-const keys = ['name', 'age'];
-const values = ['Lydia', 22];
+const keys = ["name", "age"];
+const values = ["Lydia", 22];
 
 const method =
   /* ?? */
@@ -5096,7 +5100,7 @@ This creates an array of subarrays containing the correct keys and values, which
 ```javascript
 const createMember = ({ email, address = {} }) => {
   const validEmail = /.+\@.+\..+/.test(email);
-  if (!validEmail) throw new Error('Valid email pls');
+  if (!validEmail) throw new Error("Valid email pls");
 
   return {
     email,
@@ -5104,7 +5108,7 @@ const createMember = ({ email, address = {} }) => {
   };
 };
 
-const member = createMember({ email: 'my@email.com' });
+const member = createMember({ email: "my@email.com" });
 console.log(member);
 ```
 
@@ -5128,10 +5132,10 @@ The default value of `address` is an empty object `{}`. When we set the variable
 ###### 155. এটার আউটপুট কোনটা?
 
 ```javascript
-let randomValue = { name: 'Lydia' };
+let randomValue = { name: "Lydia" };
 randomValue = 23;
 
-if (!typeof randomValue === 'string') {
+if (!typeof randomValue === "string") {
   console.log("It's not a string!");
 } else {
   console.log("Yay it's a string!");
