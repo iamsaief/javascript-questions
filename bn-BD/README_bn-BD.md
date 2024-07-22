@@ -4379,7 +4379,7 @@ funcTwo();
 
 ---
 
-###### 134. How can we invoke `sum` in `sum.js` from `index.js?`
+###### 134. কিভাবে আমরা `sum.js` এর `sum` কে `index.js` থেকে কল করতে পারি?
 
 ```javascript
 // sum.js
@@ -4401,7 +4401,7 @@ import * as sum from "./sum";
 
 #### উত্তর: C
 
-With the asterisk `*`, we import all exported values from that file, both default and named. If we had the following file:
+এখানে এস্টেরিস্ক `*` দিয়ে, আমরা ওই ফাইলের সকল এক্সপোর্ট ভ্যালুগুলোকে ইম্পোর্ট করেছি, _ডিফল্ট_ ও _নেমড_ দুটোই। যদি আমাদের নিচে উল্লেখিত ফাইল থাকতঃ
 
 ```javascript
 // info.js
@@ -4414,7 +4414,7 @@ import * as info from "./info";
 console.log(info);
 ```
 
-The following would get logged:
+তবে নিচে উল্লেখিতভাবে লগ হতঃ
 
 ```javascript
 {
@@ -4424,13 +4424,13 @@ The following would get logged:
 }
 ```
 
-For the `sum` example, it means that the imported value `sum` looks like this:
+`sum` উদাহরণের বেলায়, এটা বোঝায় যে ইম্পোর্ট করা `sum` ভ্যালুটি এরকম দেখাবেঃ
 
 ```javascript
 { default: function sum(x) { return x + x } }
 ```
 
-We can invoke this function, by calling `sum.default`
+আমরা এই ফানংশনটিকে চালাতে পারি, `sum.default` কল করার মাধ্যমে।
 
 </p>
 </details>
@@ -4461,20 +4461,20 @@ person.name;
 
 #### উত্তর: C
 
-With a Proxy object, we can add custom behavior to an object that we pass to it as the second argument. In this case, we pass the `handler` object which contains two properties: `set` and `get`. `set` gets invoked whenever we _set_ property values, and `get` gets invoked whenever we _get_ (access) property values.
+Proxy অবজেক্ট দিয়ে, আমরা কোন একটি অবজেক্টে কাস্টম অচারন যুক্ত করতে পারি যেটাকে ২য় আর্গুমেন্ট হিসেবে পাস করি। এক্ষেত্রে, `handler` অবজেক্ট পাস করেছি যেটায় দুটি প্রোপার্টিস আছেঃ `set` এবং `get`। `set` কল হয় যখনি আমরা কোন প্রোপার্টির ভ্যালু _সেট_ করি, এবং `get` কল হয় যখনি আমরা কোন প্রোপার্টির ভ্যালু _পেতে_ চাই (এক্সেস করি)।
 
-The first argument is an empty object `{}`, which is the value of `person`. To this object, the custom behavior specified in the `handler` object gets added. If we add a property to the `person` object, `set` will get invoked. If we access a property on the `person` object, `get` gets invoked.
+প্রথম আর্গুমেন্টটি হলো একটি ফাঁকা অবজেক্ট `{}`, যেটা `person` অবজেক্টের ভ্যালু। এই অবজেক্টে, `handler` অবজেক্টে বর্নীত কাস্টম আচরণগুলো যুক্ত হয়েছে। যদি আমরা `person` অবজেক্টের কোন প্রোপার্টি যুক্ত করি, `set` কল হবে। যদি আমরা `person` অবজেক্টের কোন প্রোপার্টি এক্সেস করি, `get` কল হবে।
 
-First, we added a new property `name` to the proxy object (`person.name = "Lydia"`). `set` gets invoked, and logs `"Added a new property!"`.
+প্রথমে, আমরা প্রক্সি অবজেক্টে নতুন প্রোপার্টি `name` যুক্ত করেছি (`person.name = "Lydia"`)। `set` কল হবে, এবং লগ করে `"Added a new property!"`।
 
-Then, we access a property value on the proxy object, and the `get` property on the handler object is invoked. `"Accessed a property!"` gets logged.
+এরপরে, আমরা প্রক্সি অবজেক্টের একটি প্রোপার্টি এক্সেস করছি, এবং হ্যান্ডলার অবজেক্টের `get` প্রোপার্টি কল হয়। `"Accessed a property!"` লগ হয়।
 
 </p>
 </details>
 
 ---
 
-###### 136. Which of the following will modify the `person` object?
+###### 136. নিচের কোনটি `person` অবজেক্টকে পরিবর্তন করবে?
 
 ```javascript
 const person = { name: "Lydia Hallie" };
@@ -4492,16 +4492,16 @@ Object.seal(person);
 
 #### উত্তর: A
 
-With `Object.seal` we can prevent new properties from being _added_, or existing properties to be _removed_.
+`Object.seal` ব্যবহার করে, আমরা অবজেক্টে কোন নতুন প্রোপার্টি _যুক্ত_ করায় বাধা দিতে পারে, অথবা কোন প্রোপার্টি _মুছে_ ফেলায় বাধা দিতে পারি।
 
-However, you can still modify the value of existing properties.
+কিন্তু, আপনি এখনো বিদ্যমান কোন প্রোপার্টির ভ্যালুকে পরিবর্তন করতে পারবেন। যেমন, `person.name = "Evan Bacon"`।
 
 </p>
 </details>
 
 ---
 
-###### 137. Which of the following will modify the `person` object?
+###### 137. নিচের কোনটি `person` অবজেক্টকে পরিবর্তন করবে?
 
 ```javascript
 const person = {
@@ -4524,9 +4524,9 @@ Object.freeze(person);
 
 #### উত্তর: C
 
-The `Object.freeze` method _freezes_ an object. No properties can be added, modified, or removed.
+`Object.freeze` ব্যবহার করে, একটি অবজেক্টকে _সংরক্ষিত_ বা _ফ্রিজ_ করতে পারেন। অর্থাৎ কোন প্রোপার্টি যুক্ত করা, মুছে ফেলা, বা পরিবর্তন করা যাবে না।
 
-However, it only _shallowly_ freezes the object, meaning that only _direct_ properties on the object are frozen. If the property is another object, like `address` in this case, the properties on that object aren't frozen, and can be modified.
+কিন্তু, এটা কেবল _অগভীরভাবে_ অবজেক্টকে ফ্রিজ করে, মানে হলো যে এটি অবজেক্টের কেবল _প্রতক্ষ্য_ প্রোপার্টিস (first level) গুলোকে ফ্রিজ করে, যেমন এক্ষেত্রে `address`, এই অবজেক্টের প্রোপার্টিসগুলো ফ্রিজ হয়নি, এবং েদের প্রইবর্তন করা যাবে। যেমন, `person.address.street = "101 Main St"`।
 
 </p>
 </details>
@@ -4556,9 +4556,9 @@ myFunc(3);
 
 #### উত্তর: A
 
-First, we invoked `myFunc()` without passing any arguments. Since we didn't pass arguments, `num` and `value` got their default values: num is `2`, and `value` is the returned value of the function `add`. To the `add` function, we pass `num` as an argument, which had the value of `2`. `add` returns `4`, which is the value of `value`.
+প্রথমে, আমরা কোন আর্গুমেন্ট ছাড়াই `myFunc()` কে কল করেছি। যেহেতু কো নার্গুমেন্ট পাস করিনি, `num` ও `value` তাদের ভ্যালু হিসেবে ডিফল্ট ভ্যালুই পাচ্ছেঃ `num` হল `2`, এবং `value` হল `add` ফাংশনের রিটার্ন ভ্যালু। `add` ফাংশনে আমরা একটি আর্গুমেন্ট পাস করেছি `num`, যেটার ভ্যালু হল `2`। `add` ফাংশন রিটার্ন করে `4`, এটাই হলো `value`-র ভ্যালু।
 
-Then, we invoked `myFunc(3)` and passed the value `3` as the value for the argument `num`. We didn't pass an argument for `value`. Since we didn't pass a value for the `value` argument, it got the default value: the returned value of the `add` function. To `add`, we pass `num`, which has the value of `3`. `add` returns `6`, which is the value of `value`.
+পরবর্তীতে, আমরা `myFunc(3)` করছি, এখানে `3` কে পাস করছি `num` আর্গুমেন্টের ভ্যালু হিসেবে। আমরা `value` আর্গুমেন্টের কোন ভ্যালু পাস করিনি, এটা ডিফল্ট ভ্যালু পাচ্ছেঃ `add` ফাংশনের রিটার্ন ভ্যালু। `add` ফাংশনে আমরা `num` পাস করেছি, যেটার ভ্যালু `3`। `add` ফাংশনের রিটার্ন করে `6`, এটাই হলো `value`-র ভ্যালু।
 
 </p>
 </details>
@@ -4596,14 +4596,14 @@ console.log(counter.#number);
 
 #### উত্তর: D
 
-In ES2020, we can add private variables in classes by using the `#`. We cannot access these variables outside of the class. When we try to log `counter.#number`, a SyntaxError gets thrown: we cannot access it outside the `Counter` class!
+ইএস২০২০ এ, ক্লাসের ভেতর আমারা প্রাইভেট ভ্যারিয়েবল যুক্ত করতে পারি `#` ব্যাবহার করে। আমরা এই ভ্যারিয়েবলগুলোকে ক্লাসের বাইরে থেকে এক্সেস করতে পারি না। যখন `counter.#number` কে লগ করার চেষ্টা করা হয়, SyntaxError ছোড়া হয়ঃ we cannot access it outside the `Counter` class!
 
 </p>
 </details>
 
 ---
 
-###### 140. What's missing?
+###### 140. এখানে মিসিং অংশে কি হবে?
 
 ```javascript
 const teams = [
@@ -4638,9 +4638,9 @@ obj.next(); // { value: "Lisa", done: false }
 
 #### উত্তর: B
 
-In order to iterate over the `members` in each element in the `teams` array, we need to pass `teams[i].members` to the `getMembers` generator function. The generator function returns a generator object. In order to iterate over each element in this generator object, we need to use `yield*`.
+`teams` অ্যারের প্রতিটি এলিমেন্টের জন্য `members` এর উপর লুপ চালাতে হলে, `getMembers` জেনারেটর ফাংশনে `teams[i].members` কে পাস করতে হবে। জেনারেটর ফাংশন রিটার্ন করে একটি জেনারেটর অবজেক্ট। জেনারেটর অবজেক্টের প্রতিটি এলিমেন্টের উপর লুপ চালানোন্র জন্য, আমাদেরকে `yield*` ব্যবহার করতে হবে।
 
-If we would've written `yield`, `return yield`, or `return`, the entire generator function would've gotten returned the first time we called the `next` method.
+যদি আমরা `yield`, `return yield`, বা `return` লিখতাম, সম্পুর্ন জেনেরাটর ফাংশনটি রিটার্ন পেতাম প্রথমবার `next` মেথড করার পরে।
 
 </p>
 </details>
@@ -4677,15 +4677,13 @@ console.log(person.hobbies);
 
 #### উত্তর: C
 
-The `addHobby` function receives two arguments, `hobby` and `hobbies` with the default value of the `hobbies` array on the `person` object.
+`addHobby` ফাংশনটি ২টি আর্গুমেন্ট গ্রহণ করে, `hobby` ও `hobbies` - যার ডিফল্ট ভ্যালু হলো `person` অবজেক্টের `hobbies` অ্যারে।
 
-First, we invoke the `addHobby` function, and pass `"running"` as the value for `hobby` and an empty array as the value for `hobbies`. Since we pass an empty array as the value for `hobbies`, `"running"` gets added to this empty array.
+প্রথমে, আমরা `addHobby` ফাংশনটি কল করছি এবং `hobby`-এর ভ্যালু পাস করছি `"running"` এবং `hobbies`-এর ভ্যালু পাস করছি একটি ফাঁকা অ্যারে। যেহেতু একটি ফাঁকা অ্যারে পাস করছি `hobbies`-এর ভ্যালু হিসেবে, `"running"` যুক্ত হচ্ছে এই ফাঁকা অ্যারেতে।
 
-Then, we invoke the `addHobby` function, and pass `"dancing"` as the value for `hobby`. We didn't pass a value for `hobbies`, so it gets the default value, the `hobbies` property on the `person` object. We push the hobby `dancing` to the `person.hobbies` array.
+এরপরে, আমরা `addHobby` ফাংশনটি কল করছি এবং `hobby`-এর ভ্যালু পাস করছি `"dancing"`। `hobbies` এর জন্য আমরা কোন ভ্যালু পাস করিনি, তাই এটার ভ্যালু হয় ডিফল্ট ভ্যালুটিই, ভ্যালুটি হলো `person` অবজেক্টের `hobbies` অ্যারে। আমরা `person.hobbies` অ্যারেতে `"dancing"` যুক্ত (পুশ) করছি।
 
-Last, we invoke the `addHobby` function, and pass `"baking"` as the value for `hobby`, and the `person.hobbies` array as the value for `hobbies`. We push the hobby `baking` to the `person.hobbies` array.
-
-After pushing `dancing` and `baking`, the value of `person.hobbies` is `["coding", "dancing", "baking"]`
+সর্শেষে, আমরা `addHobby` ফাংশনটি কল করছি এবং `hobby`-এর ভ্যালু পাস করছি `"baking"`, এবং `hobbies`-এর ভ্যালু পাস করছি `person.hobbies` অ্যারেটি। আমরা `person.hobbies` অ্যারেতে `"baking"` যুক্ত (পুশ) করছি।
 
 </p>
 </details>
@@ -4721,14 +4719,14 @@ const pet = new Flamingo();
 
 #### উত্তর: B
 
-We create the variable `pet` which is an instance of the `Flamingo` class. When we instantiate this instance, the `constructor` on `Flamingo` gets called. First, `"I'm pink. 🌸"` gets logged, after which we call `super()`. `super()` calls the constructor of the parent class, `Bird`. The constructor in `Bird` gets called, and logs `"I'm a bird. 🦢"`.
+আমরা `pet` ভ্যারিয়েবলটি তৈরি করেছি যেটা `Flamingo` ক্লাসের একটি ইন্সট্যান্স। যখন আমরা এই ইন্সট্যান্সটিকে ইন্সট্যানশিয়েট (`new Flamingo()`) করি, `Flamingo` ক্লাসের কন্সট্রাক্টর কল হয়। প্রথমে, `"I'm pink. 🌸"` লগ হয়, এরপরে আমরা `super()` কল করি। `super()` প্যারেন্ট ক্লাস `Bird`-এর কন্সট্রাক্টরকে কল করে। `Bird` ক্লাসের কন্সট্রাক্টর কল হয় এবং লগ করে `"I'm a bird. 🦢"`।
 
 </p>
 </details>
 
 ---
 
-###### 143. Which of the options result(s) in an error?
+###### 143. কোন অপশনটি এরর রেজাল্ট দেয়?
 
 ```javascript
 const emojis = ["🎄", "🎅🏼", "🎁", "⭐"];
@@ -4749,14 +4747,14 @@ const emojis = ["🎄", "🎅🏼", "🎁", "⭐"];
 
 #### উত্তর: D
 
-The `const` keyword simply means we cannot _redeclare_ the value of that variable, it's _read-only_. However, the value itself isn't immutable. The properties on the `emojis` array can be modified, for example by pushing new values, splicing them, or setting the length of the array to 0.
+`const` কিওয়ার্ড দিয়ে নেয়া কোন ভ্যারিয়েবলের ভ্যালুকে আমরা _রিডিক্লেয়ার_ করতে পারব না (`emojis = [...emojis, "🥂"]`), এটা কেবল _রিড-অনলি_। কিন্তু ভ্যারিয়েবলের ভ্যালুগুলো নিজেরা অপরিবর্তনীয় নয়। অর্থাৎ `emojis` অ্যারের এলিমেন্টগুলোকে পরিবর্তন করা যাবে, উদাহরণস্বরূপ, নতুন ভ্যালু পুশ (যুক্ত) করা (`emojis.push("🦌")`), স্প্লাইস করা (নির্দিষ্ট ইনডেক্সে ভ্যালু যুক্ত করা) (`emojis.splice(0, 2)`), বা অ্যারের লেন্থকে জিরো (`emojis.length = 0`) সেট করা।
 
 </p>
 </details>
 
 ---
 
-###### 144. What do we need to add to the `person` object to get `["Lydia Hallie", 21]` as the output of `[...person]`?
+###### 144. `[...person]` এর আউটপুট `["Lydia Hallie", 21]` পেতে হলে `person` অবজেক্টে আমাদের কি যুক্ত করতে হবে?
 
 ```javascript
 const person = {
@@ -4777,7 +4775,7 @@ const person = {
 
 #### উত্তর: C
 
-Objects aren't iterable by default. An iterable is an iterable if the iterator protocol is present. We can add this manually by adding the iterator symbol `[Symbol.iterator]`, which has to return a generator object, for example by making it a generator function `*[Symbol.iterator]() {}`. This generator function has to yield the `Object.values` of the `person` object if we want it to return the array `["Lydia Hallie", 21]`: `yield* Object.values(this)`.
+অবজেক্ট ডিফল্টভাবে ইটারেবল নয়। একটি ইটারেবল ইটারেবল হয় যদি ইটারেটর প্রোটোকল থাকে। আমরা এটা নিজারা যুক্ত করতে পারি ইটারেটর সিম্বল `[Symbol.iterator]` যুক্ত করার মাধ্যমে, যেটাকে একটি জেনারেটর অবজেক্ট রিটার্ন করতে হবে, উদাহরণস্বরূপ এটাকে একটি জেনারেটর ফাংশন `*[Symbol.iterator]() {}` করার মাধ্যমে। এই জেনারেটর ফাংশন `person` অবজেক্টের `Object.values` কে ইল্ড করতে হবে যদি আমরা চাই এটা অ্যারেটি রিটার্ন করবেঃ `["Lydia Hallie", 21]`: `yield* Object.values(this)`
 
 </p>
 </details>
@@ -4807,7 +4805,7 @@ console.log(count);
 
 #### উত্তর: C
 
-The `if` condition within the `forEach` loop checks whether the value of `num` is truthy or falsy. Since the first number in the `nums` array is `0`, a falsy value, the `if` statement's code block won't be executed. `count` only gets incremented for the other 3 numbers in the `nums` array, `1`, `2` and `3`. Since `count` gets incremented by `1` 3 times, the value of `count` is `3`.
+`forEach` লুপের `if` শর্তটি চেক করছে `num` এর ভ্যালু ট্রুথি বা ফলসি কিনা। যেহেতু `num` অ্যারের ১ম নাম্বারটি `0`, একটি ফলসি ভ্যালু, তাই `if` স্টেটমেন্টের কোড ব্লকটি চলবে না। `count` কেবল অন্য ৩টি নাম্বারের জন্য বৃদ্ধি পাবে, `1`, `2` ও `3`। যেহেতু `count` `1` করে ৩বার বৃদ্ধি পায়, `count` এর ভ্যালু এখন হয়েছে `3`।
 
 </p>
 </details>
@@ -4836,13 +4834,13 @@ getFruit([["🍍"], ["🍊", "🍌"]]);
 
 #### উত্তর: D
 
-The `?` allows us to optionally access deeper nested properties within objects. We're trying to log the item on index `1` within the subarray that's on index `1` of the `fruits` array. If the subarray on index `1` in the `fruits` array doesn't exist, it'll simply return `undefined`. If the subarray on index `1` in the `fruits` array exists, but this subarray doesn't have an item on its `1` index, it'll also return `undefined`.
+`?.` ব্যবহার করে আমরা অবজেক্টের ডিপার নেস্টেড কোন প্রোপার্টিকে অপশনালি এক্সেস করতে পারি। আমরা চেষ্টা করছি সাব-অ্যারের ইনডেক্স `1` আইটেমটিকে লগ করার যেটা `fruits` অ্যারের ইনডেক্স `1` এ অবস্থিত। যদি `fruits` অ্যারের ইনডেক্স `1` এ সাব-অ্যারেটিকে পাওয়া না যায়, এটা `undefined` রিটার্ন করবে। যদি `fruits` অ্যারের ইনডেক্স `1` এ সাব-অ্যারেটিকে পাওয়া যায়, কিন্তু সাব-অ্যারেতে ইনডেক্স `1` আইটেমটিকে পাওয়া না যায় তখনও এটা `undefined` রিটার্ন করবে।
 
-First, we're trying to log the second item in the `['🍍']` subarray of `[['🍊', '🍌'], ['🍍']]`. This subarray only contains one item, which means there is no item on index `1`, and returns `undefined`.
+প্রথমে, আমরা লগ করার চেষ্টা করছি `[['🍊', '🍌'], ['🍍']]`-অ্যারেটির সাব-অ্যারে `['🍍']` থেকে দ্বিতীয় আইটেমটি। এই সাব-অ্যারেতে কেবল একটি আইটেমই আছে, যার মানে হল এর ইনডেক্স `1`-এ কিছু নেই তাই `undefined` রিটার্ন করছে।
 
-Then, we're invoking the `getFruits` function without passing a value as an argument, which means that `fruits` has a value of `undefined` by default. Since we're conditionally chaining the item on index `1` of`fruits`, it returns `undefined` since this item on index `1` does not exist.
+এরপর, `getFruits` ফাংশনটিকে কল করেছি কোন ভ্যালুকে আর্গুমেন্ট হিসেবে পাস না করেই, যার মানে হয় `fruits` এর ডিফল্ট ভ্যালু পাচ্ছে `undefined`। যেহেতু, আমরা `fruits` অ্যারের ইনডেক্স `1` আইটেমকে কন্ডিশনালি চেইনিং করছি, এটা `undefined` রিটার্ন করছে কারন ইনডেক্স `1` এর আইটেম নেই।
 
-Lastly, we're trying to log the second item in the `['🍊', '🍌']` subarray of `['🍍'], ['🍊', '🍌']`. The item on index `1` within this subarray is `🍌`, which gets logged.
+সর্বশেষে, আমরা চেষ্টা লগ করার করছি `[["🍍"], ["🍊", "🍌"]]`-অ্যারেটির সাব-অ্যারে `['🍊', '🍌']` থেকে দ্বিতীয় আইটেমটি। সাব-অ্যারের ইনডেক্স `1` এর আইটেমটি হল `🍌`, এটিই লগ হয়েছে।
 
 </p>
 </details>
@@ -4878,7 +4876,7 @@ console.log(calc.count);
 
 #### উত্তর: A
 
-We set the variable `calc` equal to a new instance of the `Calc` class. Then, we instantiate a new instance of `Calc`, and invoke the `increase` method on this instance. Since the count property is within the constructor of the `Calc` class, the count property is not shared on the prototype of `Calc`. This means that the value of count has not been updated for the instance calc points to, count is still `0`.
+আমরা `calc` ভ্যারিয়েবলকে সেট করেছি `Calc` ক্লাসের নতুন ইন্সট্যান্সের সমান। এরপর, আমরা `Calc` ক্লাসের নতুন একটি ইন্সট্যান্সকে ইন্সট্যান্সিয়েট করেছি, এবং এই ইন্সট্যান্স দিয়ে `increase` মেথড কল করেছি। যেহেতু `count` প্রোপার্টিটি `Calc` ক্লাসের কন্সট্রাক্টরের ভেতর আছে, তাই এই প্রোপার্টিটি `Calc` ক্লাসের প্রোটোটাইপে শেয়ার হয়নি। এর মানে হল যে `count` প্রোপার্টির ভ্যালুটির কোন পরিবর্তন হয়নি নতুন ইন্সট্যান্স যে `Calc` ক্লাসকে পয়েন্ট করছে তার জন্য, তাই `count` এখনো `0`।
 
 </p>
 </details>
@@ -4920,7 +4918,7 @@ console.log(updatedUser === user);
 
 #### উত্তর: B
 
-The `updateUser` function updates the values of the `email` and `password` properties on user, if their values are passed to the function, after which the function returns the `user` object. The returned value of the `updateUser` function is the `user` object, which means that the value of updatedUser is a reference to the same `user` object that `user` points to. `updatedUser === user` equals `true`.
+`updateUser` ফাংশনটি `user` অবজেক্টের `email` ও `password` প্রোপার্টির ভ্যালুকে পরিবর্তন করে যদি ফাংশনে তাদের ভ্যালুগুলোকে পাস করা হয়, এরপরে ফাংশনটি `user` অবজেক্টটিকে রিটার্ন করে। `updateUser` ফাংশনটির রিটার্ন ভ্যালুটি হল `user` অবজেক্ট, যার মানে `updateUser` এর ভ্যালুটি হল একই `user` অবজেক্টের রেফারেন্স যেটা `user` পয়েন্ট করছে। ফলে `updatedUser === user` সমান হচ্ছে `true`।
 
 </p>
 </details>
@@ -4949,9 +4947,11 @@ console.log(fruit);
 
 #### উত্তর: C
 
-First, we invoke the `slice` method on the fruit array. The slice method does not modify the original array, but returns the value that it sliced off the array: the banana emoji.
-Then, we invoke the `splice` method on the fruit array. The splice method does modify the original array, which means that the fruit array now consists of `['🍊', '🍎']`.
-At last, we invoke the `unshift` method on the `fruit` array, which modifies the original array by adding the provided value, ‘🍇’ in this case, as the first element in the array. The fruit array now consists of `['🍇', '🍊', '🍎']`.
+প্রথমে, আমরা `fruit` অ্যারেতে `slice` মেথড কল করেছি। `slice` মেথড আসল অ্যারেকে পরিবর্তন করে না, কিন্তু অ্যারে থেকে খন্ডিত (স্লাইস) করে আনা আইটেম/গুলো রিটার্ন করেঃ এক্ষেত্রে, কলার ইমজি `'🍌'`।
+
+এরপরে, আমরা `fruit` অ্যারেতে `splice` মেথড কল করেছি। `splice` মেথড আসল অ্যারেকে পরিবর্তন করে, যার মানে হল, এখন `fruit` অ্যারেতে অবশিষ্ট আছে `['🍊', '🍎']`।
+
+সর্বশেষে, আমরা `fruit` অ্যারেতে `unshift` মেথড কল করেছি। `unshift` মেথডে পাস করা ভ্যালু/গুলোকে অ্যারেতে যুক্ত করার মাধ্যমে সে আসল অ্যারেকে পরিবর্তন করে, এক্ষেত্রে অ্যারের প্রথম এলিমেন্ট হিসেবে। তাই এখন `fruit` অ্যারেটিতে থাকছে `['🍇', '🍊', '🍎']`।
 
 </p>
 </details>
@@ -4981,13 +4981,13 @@ console.log(animals[dog]);
 
 #### উত্তর: B
 
-Object keys are converted to strings.
+অবজেক্টের কি-গুলোকে জাভাস্ক্রিপ্ট ইঞ্জিন স্ট্রিং-এ পরিবর্তন করে।
 
-Since the value of `dog` is an object, `animals[dog]` actually means that we’re creating a new property called `"[object Object]"` equal to the new object. `animals["[object Object]"]` is now equal to `{ emoji: "🐶", name: "Mara"}`.
+যেহেতু `dog` এর ভ্যালুটি একটি অবজেক্ট, `animals[dog]` এর মানে আমরা আসলে নতুন একটি অবজেক্ট সমান সেট করছি `"[object Object]"` নামের নতুন একটি প্রোপার্টি। ফলে এখন `animals["[object Object]"]` এর সমান হলো `{ emoji: "🐶", name: "Mara"}`।
 
-`cat` is also an object, which means that `animals[cat]` actually means that we’re overwriting the value of `animals["[object Object]"]` with the new cat properties.
+`cat`-ও একটি অবজেক্ট, যার মানে হলো `animals[cat]` আসলে `animals["[object Object]"]` এর ভ্যালুকে ওভাররাইড করা হয়েছে নতুন cat প্রোপার্টি দিয়ে অর্থাৎ `animals["[object Object]"]` সমান এখন `{ emoji: "🐈", name: "Sara" }`।
 
-Logging `animals[dog]`, or actually `animals["[object Object]"]` since converting the `dog` object to a string results `"[object Object]"`, returns the `{ emoji: "🐈", name: "Sara" }`.
+`animals[dog]` কে লগ করা, আসলে `animals["[object Object]"]` কেই লগ করা যেহেতু `dog` অবজেক্টকে স্ট্রিং এ পরিবর্তন করলে পাওয়া যায় `"[object Object]"` যেটা রিটার্ন করে `{ emoji: "🐈", name: "Sara" }`।
 
 </p>
 </details>
