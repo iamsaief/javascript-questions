@@ -441,7 +441,7 @@ console.log(sarah);
 
 ---
 
-###### 13. What are the three phases of event propagation?
+###### 13. ইভেন্ট প্রোপাগেশনের ৩টি ধাপ কি কি?
 
 - A: Target > Capturing > Bubbling
 - B: Bubbling > Target > Capturing
@@ -1373,7 +1373,7 @@ console.log(gen.next().value);
 
 ---
 
-###### 45. What does this return?
+###### 45. এটা কি রিটার্ন করে?
 
 ```javascript
 const firstPromise = new Promise((res, rej) => {
@@ -5018,7 +5018,7 @@ console.log(user.email);
 
 #### উত্তর: A
 
-The `updateEmail` function is an arrow function, and is not bound to the `user` object. This means that the `this` keyword is not referring to the `user` object, but refers to the global scope in this case. The value of `email` within the `user` object does not get updated. When logging the value of `user.email`, the original value of `my@email.com` gets returned.
+এখানে `updateEmail` একটি অ্যারো ফাংশন, এবং এর স্কোপ `user` অবজেক্টে বাধ্য নয়। এর মানে হলো যে `this` কীওয়ার্ডটি `user` অবজেক্টকে রেফার করছে না, বরং এক্ষেত্রে গ্লোবাল স্কোপকে রেফার করছে। `user` অবজেক্টের `email` প্রোপার্টির ভ্যালুটি পরিবর্তন হচ্ছে না। ফলে যখন `user.email`-এর ভ্যালুকে লগ করা হয়েছে, আসল ভ্যালুটিই-`my@email.com` রিটার্ন হয়েছে।
 
 </p>
 </details>
@@ -5054,14 +5054,14 @@ runPromises()
 
 #### উত্তর: D
 
-The `Promise.all` method runs the passed promises in parallel. If one promise fails, the `Promise.all` method _rejects_ with the value of the rejected promise. In this case, `promise3` is rejected with the value `"Third"`. We’re catching the rejected value in the chained `catch` method on the `runPromises` invocation to catch any errors within the `runPromises` function. Only `"Third"` gets logged, since `promise3` is rejected with this value.
+`Promise.all` মেথডটি পাস করা সকল প্রমিসগুলোকে সমান্তরালভাবে/একই সাথে রান করে। যদি একটা প্রমিস ফেইল করে, `Promise.all` মেথড রিজেক্ট করা প্রমিসের ভ্যালুটি দিয়ে _রিজেক্ট_ করবে। এক্ষেত্রে, `promise3` রিজেক্ট হয়েছে `"Third"` ভ্যালুটি দিয়ে। আমরা এই রিজেক্ট ভ্যালুটিই ক্যাচ করছি চেইন `.catch` মেথডে যখন `runPromises` চলার সময় এই ফাংশনের কোন এরর ক্যাচ করছি। কেবল `"Third"`-ই লগ হয়েছে, যেহেতু `promise3` রিজেক্ট হয়েছে `"Third"` ভ্যালুটি দিয়ে।
 
 </p>
 </details>
 
 ---
 
-###### 153. What should the value of `method` be to log `{ name: "Lydia", age: 22 }`?
+###### 153. `{ name: "Lydia", age: 22 }` লগ করা জন্য `method` এর ভ্যালুটি কি হওয়া উচিৎ?
 
 ```javascript
 const keys = ["name", "age"];
@@ -5086,9 +5086,9 @@ const method =
 
 #### উত্তর: C
 
-The `fromEntries` method turns a 2d array into an object. The first element in each subarray will be the key, and the second element in each subarray will be the value. In this case, we’re mapping over the `keys` array, which returns an array that the first element is the item on the key array on the current index, and the second element is the item of the values array on the current index.
+`fromEntries` মেথডটি একটি 2D অ্যারেকে অবজেক্টে পরিবর্তন করে। প্রতিটি সাব-অ্যারের ১ম এলিমেন্টটি হবে নির্দিষ্ট কি এবং ২য় এলিমেন্টটি হবে এই কি-এর ভ্যালু। এক্ষেত্রে, আমরা `keys` অ্যারের উপর ম্যাপ চালাচ্ছি, যেটা এমন একটি অ্যারে রিটার্ন করে যার ১ম এলিমেন্টটি হয় বর্তমান ইনডেক্সের জন্য কি-অ্যারের আইটেম, এবং ২য় এলিমেন্টটি হয় বর্তমান ইনডেক্সের জন্য ভ্যালু-অ্যারের আইটেম।
 
-This creates an array of subarrays containing the correct keys and values, which results in `{ name: "Lydia", age: 22 }`
+এটা সাব-অ্যারেগুলোর একটি অ্যারে তৈরি করে যেটাতে সঠিক কি-ভ্যালু গুলো থাকে, এটারই ফলাফল হয়েছে `{ name: "Lydia", age: 22 }`
 
 </p>
 </details>
@@ -5122,7 +5122,7 @@ console.log(member);
 
 #### উত্তর: C
 
-The default value of `address` is an empty object `{}`. When we set the variable `member` equal to the object returned by the `createMember` function, we didn't pass a value for the address, which means that the value of the address is the default empty object `{}`. An empty object is a truthy value, which means that the condition of the `address ? address : null` conditional returns `true`. The value of the address is the empty object `{}`.
+এখানে `address` এর ডিফল্ট ভ্যালু একটি ফাঁকা অবজেক্ট `{}`। যখন আমরা `member` ভ্যারিয়েবলকে সেট করছি `createMember` ফাংশনের রিটার্ন ভ্যালুর সমান, আমরা address এর কোন ভ্যালু পাস করিনি, এর মানে হলো যে `address` এর ভ্যালু থাকছে তার ডিফল্ট ভ্যালু ফাঁকা অবজেক্ট `{}`। আর ফাঁকা অবজেক্ট একটি ট্রুথি ভ্যালু, যার মানে `address ? address : null`-কন্ডিশনাল এর শর্তটি `true` রিটার্ন করছে। `address` এর ভ্যালু ফাঁকা অবজেক্ট `{}`, ফলে `{ email: "my@email.com", address: {} }` লগ হয়েছে।
 
 </p>
 </details>
@@ -5152,9 +5152,9 @@ if (!typeof randomValue === "string") {
 
 #### উত্তর: B
 
-The condition within the `if` statement checks whether the value of `!typeof randomValue` is equal to `"string"`. The `!` operator converts the value to a boolean value. If the value is truthy, the returned value will be `false`, if the value is falsy, the returned value will be `true`. In this case, the returned value of `typeof randomValue` is the truthy value `"number"`, meaning that the value of `!typeof randomValue` is the boolean value `false`.
+এখানে `if` স্টেটমেন্টের শর্তটি চেক করছে `!typeof randomValue`-এর ভ্যালু সমান `"string"` হয় কিনা। `!` অপারেটরটি ভ্যালুটিকে পরিবর্তন করে একটি বুলিয়ান ভ্যালুতে। যদি ভ্যালুটি _ট্রুথি_ হয়, রিটার্ন ভ্যালু হবে `false`, যদি ভ্যালুটি _ফলসি_ হয়, রিটার্ন ভ্যালুটি হবে `true`। এক্ষেত্রে, `typeof randomValue`-এর রিটার্ন ভ্যালু হয় `"number"`-এর ট্রুথি ভ্যালু, মানে হলো যে `!typeof randomValue`-এর ভ্যালু হয় বুলিয়ান `false` ভ্যালু।
 
-`!typeof randomValue === "string"` always returns false, since we're actually checking `false === "string"`. Since the condition returned `false`, the code block of the `else` statement gets run, and `Yay it's a string!` gets logged.
+`!typeof randomValue === "string"` সবসময় `false` রিটার্ন করে, যেহেতু আমরা আসলে চেক করছি `false === "string"` কিনা। ফলে শর্তটি `false` রিটার্ন করে, `else` স্টেটমেন্টের কোড ব্লকটি রান হয়, এবং `Yay it's a string!` লগ হয়।
 
 </p>
 </details>
